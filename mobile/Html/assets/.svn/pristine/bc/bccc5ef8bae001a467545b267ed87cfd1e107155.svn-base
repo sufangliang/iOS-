@@ -1,0 +1,107 @@
+
+var interval = 60;
+
+
+//加载完毕
+$(function(){
+
+   //获取当前手机号
+   var data = Callback.getLoginMobile();
+
+   //如果已登录   手机号存在   只读
+   if( data != undefined  && data != null  &&  data != "" ){
+            $('#mobile').attr("type","text");
+            $('#mobile').val(data);
+            $('#mobile').attr("disabled","disabled");
+            $("#sendMsgButton").removeAttr("disabled");
+     }else{
+         //监听 发送短信按钮
+		 $("#mobile").bind("input propertychange",function(){
+				 if( $("#mobile").val()!=""  &&  $("#mobile").val().length>=11 ){
+					 $("#sendMsgButton").removeAttr("disabled");
+				 }else{
+					 $("#sendMsgButton").attr("disabled","disabled");
+				 }
+			});
+     }
+
+ //发送短信
+ $('#sendMsgButton').click(function() {
+        if(interval==60){
+				//发送短信验证码
+				Callback.getChangeLoginPasswordRandomSms($('#mobile').val(),$('#pwd').val());
+        	}
+
+  	});
+
+  //提交
+  $('#sureButton').click(function() {
+  	   Callback.doChangeLoginPassword($('#mobile').val(),$('#pwd').val(), $('#code').val());
+  	});
+
+
+
+	  //监听 提交按钮
+	 $("#mobile,#pwd,#code").bind("input propertychange",function(){
+			 if( $("#mobile").val()!="" &&  $("#mobile").val().length>=11  &&  $("#pwd").val()!=""  &&  $("#code").val()!="" ){
+				 $("#sureButton").removeAttr("disabled");
+			 }else{
+				 $("#sureButton").attr("disabled","disabled");
+			 }
+		});
+
+
+
+});
+
+
+
+
+
+
+
+// 设置倒计时button
+function getMobileCheckCode() {
+    //点击之后 不能再点击
+	$("#sendMsgButton").unbind("click");
+	$("#sendMsgButton").val(interval+"秒后重发");
+	timer = window.setInterval("msgInterval();", 1000);
+
+}
+
+
+
+// 倒计时
+function msgInterval() {
+
+    // 倒计时结束
+	if (interval == 0) {
+
+	     interval=60;
+
+		 $("#sendMsgButton").val("获取手机验证码");
+
+		 $('#sendMsgButton').click(function() {
+
+				if(interval==60){
+						//发送短信验证码
+                        Callback.getChangeLoginPasswordRandomSms($('#mobile').val(),$('#pwd').val());
+
+					}
+
+			});
+
+		 window.clearInterval(timer);
+
+	}else{
+
+		$("#sendMsgButton").unbind("click");
+
+		if (isNaN(interval) || isNaN(interval - 1)  ){
+        		$("#sendMsgButton").val("获取手机验证码");
+        }else{
+        		interval = interval - 1;
+        		$("#sendMsgButton").val(interval+"秒后重发");
+        	}
+	}
+}

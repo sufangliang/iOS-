@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>益钱包转入</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<script type="application/javascript">
+	window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+</head>
+<body>
+<div class="container container_box">
+		<form id="frmApple">
+
+			<div class="form-group">
+				<!--可用金额-->
+				<input type="hidden"  id="usebalance"  />
+				<!--是否设置了交易密码-->
+				<input type="hidden"  id="have_pay_pwd"  />
+
+				<label for="amount">转入金额  <i><a href="javascript:void(0)" id="toRecharge" data-hidden="file:///android_asset/recharge.html" data-login="true">充值</a></i>  </label>
+				<input type="text"  id="amount" name="amount" class="form-control" placeholder="可用余额获取中..." maxlength="20" />
+				<input type="button"  id="allButton" class="prompt_all" value="全部" />
+
+			</div>
+
+			<div class="form-group">
+				<label for="payPwd" id="payPwd_label">交易密码</label>
+				<input type="password"  id="payPwd" name="payPwd" class="form-control" placeholder="请输入交易密码" maxlength="20" />
+		        <input type="button" class="hide_eye" value="" id="toggle_eye">
+			</div>
+
+			<div class="form-group" style="display:none;">
+				<select class="form-control" id="jxjListSelect">
+				</select>
+			</div>
+
+			<input type="button" class="btn btn-primary form-control" value="转入" id="applyButton" />
+		</form>
+		<div class="prompt">
+			<h4>温馨提示：</h4>
+			<!--p>1.<span style="color:#e76a00">首笔投资，立送10元</span>。</p-->
+			<p>1.今日（24:00前）存入，次日起息，每日收益会自动转为本金，自动复投，实现日日生息，循环增值。</p>
+			<p>2.存入30天内9%年化收益；30天至90天10%年化收益；90天以上11%年化收益。</p>
+		</div>
+	</div>
+
+
+    <!-- 提示框 -->
+	<div style="display:none" id="bombbox1" class="bombbox-black"></div>
+	<div style="display:none" id="bombbox2" class="apply_enter">
+		<div class="modal_hd">您的余额不足</div>
+		<div class="modal_bd">是否充值<span id="add_money"></span>元，完成此次转入？</div>
+		<div class="modal_ft">
+			<span class="btn-modal btn-modal-no" id="doCancel">取消</span>
+			<span class="btn-modal btn-modal-go" id="gotoRecharge" data-hidden="file:///android_asset/recharge.html" data-login="true">充值并转入</span>
+		</div>
+	</div>
+
+
+
+	<script src="static/js/jquery-2.0.3.min.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+	<script src="js/formatutil.js"  charset="utf-8"></script>
+	<script src="js/apply.js"  charset="utf-8"></script>
+
+
+
+
+	
+</body>
+
+</html>

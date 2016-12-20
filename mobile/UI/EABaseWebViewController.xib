@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EABaseWebViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="BWD-vz-jPQ"/>
+                <outlet property="webView" destination="kaI-Pu-Tac" id="l1D-uK-fnH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-Pu-Tac">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="okZ-Xr-C5d"/>
+                    </connections>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="kaI-Pu-Tac" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7bc-PH-3Ev"/>
+                <constraint firstAttribute="bottom" secondItem="kaI-Pu-Tac" secondAttribute="bottom" id="8Jg-O5-4c0"/>
+                <constraint firstAttribute="trailing" secondItem="kaI-Pu-Tac" secondAttribute="trailing" id="9di-sy-TqR"/>
+                <constraint firstItem="kaI-Pu-Tac" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Yrq-xm-5Zs"/>
+            </constraints>
+            <point key="canvasLocation" x="117" y="17"/>
+        </view>
+    </objects>
+</document>

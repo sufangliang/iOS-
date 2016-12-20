@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>益钱包赎回</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+</script>
+</head>
+<body>
+<div class="container container_box">
+    <form id="frmApple">
+
+        <div class="form-group">
+            <label for="amount">赎回金额</label>
+            <!--最大赎回金额-->
+            <input type="hidden" id="maxRedeemAmount"/>
+            <input type="text"  id="amount" name="amount" class="form-control" placeholder="可赎回金额获取中..." maxlength="20" />
+            <input type="button" id="allButton" class="prompt_all" value="全部" />
+        </div>
+        <div class="form-group">
+            <label for="payPwd">交易密码</label>
+            <input type="password"  id="payPwd" name="payPwd" class="form-control"  placeholder="请输入交易密码" maxlength="20" />
+            <input type="button" class="hide_eye" value="" id="toggle_eye">
+        </div>
+        <input type="button" class="btn btn-primary form-control" id="redeemButton" value="赎回"/>
+    </form>
+
+    <div class="prompt">
+        <h4>温馨提示：</h4>
+        <p>1.转入资金满7日后即可随时赎回，赎回金额不限</p>
+        <p>2.按当前利率从低到高赎回</p>
+        <p>3.按投资金额从少到多赎回</p>
+    </div>
+
+</div>
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="js/formatutil.js"></script>
+<script src="js/redeem.js"></script>
+</body>
+</html>

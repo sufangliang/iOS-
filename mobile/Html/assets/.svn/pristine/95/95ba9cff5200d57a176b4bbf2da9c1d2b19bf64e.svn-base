@@ -1,0 +1,59 @@
+document.write("<script language='javascript' src='js/common.js'></script>");
+
+//加载完毕
+$(function() {
+
+   //获取益钱包详情
+   loadURL(wrapIosNativeCallback("getWalletDetail"));
+
+  // 跳转到详细投资页面
+  $("div[class='index_list_c']").click(function() {
+    //跳转到相关页面  url  是否需要登录
+
+    loadURL(wrapIosNativeCallback("gotoLocalWebPage", $(this).data("hidden").replace("file:///android_asset/", ""), $(this).data("login")));
+  });
+
+
+  //banner手势滑动
+  $('#carousel-example-generic').hammer().on('swipeleft', function() {
+    $(this).carousel('next');
+  });
+
+  $('#carousel-example-generic').hammer().on('swiperight', function() {
+    $(this).carousel('prev');
+  });
+
+});
+//获取益钱包详情
+function getWalletDetail(data){
+ var obj = jQuery.parseJSON(data);
+ //起投金额
+ $('#min_num').text("￥"+obj.MIN_NUM);
+}
+
+
+
+document.getElementById("touch_1").addEventListener("touchstart", touchStart, false);
+document.getElementById("touch_1").addEventListener("touchmove", touchMove, false);
+document.getElementById("touch_1").addEventListener("touchend", touchEnd, false);
+
+document.getElementById("touch_2").addEventListener("touchstart", touchStart, false);
+document.getElementById("touch_2").addEventListener("touchmove", touchMove, false);
+document.getElementById("touch_2").addEventListener("touchend", touchEnd, false);
+
+document.getElementById("touch_3").addEventListener("touchstart", touchStart, false);
+document.getElementById("touch_3").addEventListener("touchmove", touchMove, false);
+document.getElementById("touch_3").addEventListener("touchend", touchEnd, false);
+
+
+function touchStart(event) {
+  this.style.background = "#e1e1e1";
+}
+
+function touchMove(event) {
+  this.style.background = "#FFF";
+}
+
+function touchEnd(event) {
+  this.style.background = "#FFF";
+}

@@ -1,0 +1,184 @@
+
+//加载完毕
+$(function(){
+
+    //判断是否登录状态
+    Callback.refresh();
+
+    //实名认证
+    $("#touch_1").click(function() {
+               //跳转到相关页面  url  是否需要登录
+               Callback.gotoWebViewPage($(this).data("hidden"),$(this).data("login"));
+          });
+
+
+
+     //密码设置
+     $("#setting_pwd").click(function() {
+                 //跳转到相关页面  url  是否需要登录
+                Callback.gotoWebViewPage($(this).data("hidden"),$(this).data("login"));
+            });
+
+       //二维码
+     $("#qrcode").click(function() {
+                      //跳转到相关页面  url  是否需要登录
+                     Callback.gotoWebViewPage($(this).data("hidden"),$(this).data("login"));
+                 });
+
+
+     //关于我们
+     $("#aboutus").click(function() {
+                 //跳转到相关页面  url  是否需要登录
+                Callback.gotoWebViewPage($(this).data("hidden"),$(this).data("login"));
+            });
+
+    //获取版本号
+    $("#versionName").text(Callback.getVersionName());
+
+    //检测更新
+    $("#versionName").parent().click(function() {
+        Callback.checkVersion();
+                  });
+
+    //在线客服
+    $("#custom").click(function() {
+             Callback.custom();
+            });
+    //拨号
+    $("#callTel").click(function() {
+                 Callback.callTel();
+                });
+
+
+
+    //弹出模态框
+    $('#logoutButton').click(function(){
+      $('#imgbox_overlay').fadeIn();
+      $('.foot_tk').fadeIn();
+
+    });
+
+
+    //关闭模态框
+    $('#btn-c,#imgbox_overlay').click(function(){
+      $('.foot_tk').fadeOut();
+      $('#imgbox_overlay').fadeOut();
+
+    });
+
+
+     //登出
+     $("#logoutSure").click(function() {
+                $('.foot_tk .btn_go #btn-c').click();
+                 //登出
+                Callback.doLogOut();
+            });
+
+
+
+});
+
+
+// 判断是否登录状态
+function onResumeRefresh(){
+   Callback.onResumeRefresh();
+}
+//已登录
+function refreshLoginOk(){
+    $('#notLogin').hide();
+    $('#hadLogin').show();
+    $('#logoutButton').show();
+     //获取用户信息
+     Callback.getUser();
+}
+
+//未登录
+function refreshNotLogin(){
+    $('#hadLogin').hide();
+    $('#notLogin').show();
+    $('#logoutButton').hide();
+
+}
+
+//用户详情
+function getUser(data){
+   var obj = jQuery.parseJSON(data);
+   $('#name').text(obj.NAME);
+   $('#mobile').text(obj.MOBILE);
+
+ //身份认证通过
+  var idCardStatus = obj.ID_CARD_STATUS;
+  if(idCardStatus==0 || idCardStatus ==1){
+     $('#realNameVerify').text("已认证");
+     $('#realNameVerify').attr("class","user_rz");
+  }else{
+     $('#realNameVerify').text("未认证");
+     $('#realNameVerify').attr("class","user_rz user_rzno");
+  }
+
+}
+
+
+
+
+document.getElementById("touch_1").addEventListener("touchstart", touchStart, false);
+document.getElementById("touch_1").addEventListener("touchmove", touchMove, false);
+document.getElementById("touch_1").addEventListener("touchend", touchEnd, false);
+document.getElementById("touch_1").addEventListener("touchcancel", touchCancel, false);
+
+document.getElementById("setting_pwd").addEventListener("touchstart", touchStart, false);
+document.getElementById("setting_pwd").addEventListener("touchmove", touchMove, false);
+document.getElementById("setting_pwd").addEventListener("touchend", touchEnd, false);
+document.getElementById("setting_pwd").addEventListener("touchcancel", touchCancel, false);
+
+document.getElementById("aboutus").addEventListener("touchstart", touchStart, false);
+document.getElementById("aboutus").addEventListener("touchmove", touchMove, false);
+document.getElementById("aboutus").addEventListener("touchend", touchEnd, false);
+document.getElementById("aboutus").addEventListener("touchcancel", touchCancel, false);
+
+
+document.getElementById("callTel").addEventListener("touchstart", touchStart, false);
+document.getElementById("callTel").addEventListener("touchmove", touchMove, false);
+document.getElementById("callTel").addEventListener("touchend", touchEnd, false);
+document.getElementById("callTel").addEventListener("touchcancel", touchCancel, false);
+
+document.getElementById("custom").addEventListener("touchstart", touchStart, false);
+document.getElementById("custom").addEventListener("touchmove", touchMove, false);
+document.getElementById("custom").addEventListener("touchend", touchEnd, false);
+document.getElementById("custom").addEventListener("touchcancel", touchCancel, false);
+
+
+document.getElementById("checkVersion").addEventListener("touchstart", touchStart, false);
+document.getElementById("checkVersion").addEventListener("touchmove", touchMove, false);
+document.getElementById("checkVersion").addEventListener("touchend", touchEnd, false);
+document.getElementById("checkVersion").addEventListener("touchcancel", touchCancel, false);
+
+
+document.getElementById("qrcode").addEventListener("touchstart", touchStart, false);
+document.getElementById("qrcode").addEventListener("touchmove", touchMove, false);
+document.getElementById("qrcode").addEventListener("touchend", touchEnd, false);
+document.getElementById("qrcode").addEventListener("touchcancel", touchCancel, false);
+
+
+
+
+function touchStart(event) {
+  this.style.background = "#e1e1e1";
+}
+
+function touchMove(event) {
+  this.style.background = "#FFF";
+}
+
+function touchEnd(event) {
+  this.style.background = "#FFF";
+}
+
+function touchCancel(event){
+  this.style.background = "#FFF";
+}
+
+
+
+
+

@@ -1,0 +1,72 @@
+	document.write("<script language='javascript' src='/assets/js/util/common.js'></script>");
+	
+	//滚动全局变量
+	var options = {
+		useEasing: true,
+		useGrouping: true,
+		separator: ',',
+		decimal: '.',
+		prefix: '',
+		suffix: ''
+	};
+	
+	
+	//加载完毕
+	$(function() {
+	
+		//益定宝类型 1个月 或者 3个月
+		var type = queryString("type");
+	
+		if ("3" == type) {
+			$("title").html("益定宝-3个月");
+			$("#yearRate").text("12");
+		}
+	
+		getYdb(type);
+	});
+	
+	//益定宝
+	function getYdb(type) {
+		var url="";
+		if(type==1){
+			url='/getydbone';
+		}else{
+			url='/getydbthree';
+		}
+		
+		$.getJSON(url, $.extend({}, getRequestData()), function(data) {
+			var obj = jQuery.parseJSON(data.detail);
+			
+			$("#remain_amount").text(formatMoney(obj.remain_amount));
+			$("#progress").text(obj.progress + "%");
+			$("#bg_progress").css({
+				"width": obj.progress + "%"
+			});
+		
+			//满额
+			if (obj.remain_amount <= 0) {
+				$("#goto_apply").hide();
+				$("#finished").show();
+			}
+		
+			$("a").click(function() {
+				//跳转到相关页面  url  是否需要登录
+				if(refresh()){
+					window.location.href = urlJson.base + $(this).data("hidden").replace("file:///android_asset", "")+"?aid=" + obj.id + "&remain_amount=" + obj.remain_amount + "&min_num=" + obj.min_num;
+				}else{
+					window.location.href = urlJson.base+"/login.html";
+				}
+			});
+		}).error(function(){
+			requestError();
+		});
+	}
+	
+	
+	
+	//获取URL参数
+	function queryString(item) {
+		var url = location.href;
+		var sValue = url.match(new RegExp("[\?\&]" + item + "=([^\&]*)(\&?)", "i"))
+		return sValue ? sValue[1] : sValue
+	}

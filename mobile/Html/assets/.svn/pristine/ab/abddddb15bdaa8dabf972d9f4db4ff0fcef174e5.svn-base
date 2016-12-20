@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>关于我们</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="js/fastclick.js"></script>
+    <script type="application/javascript">
+        window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+        }, false);
+
+
+    </script>
+</head>
+
+<body>
+<img src="img/service/aboutus_banner.jpg" class="imgauto">
+
+<div class="aboutus_title">什么是益大家</div>
+<p class="aboutus_p">
+    益大家金融系依托金融、供应链管理、互联网等领域资深人士，倾力打造的低风险、较高收益和高灵活性的在线投融资平台，是业内首家专注于跨境供应链金融的投融资平台。</p>
+
+<p class="aboutus_p">秉承益你、益我、益大家的普惠金融理念，益大家金融在为投资者获取低风险收益的同时，也为中小型供应链企业解决融资之忧，以走各方共赢互惠的可持续发展之路。</p>
+<!--我们的团队-->
+<div class="aboutus_title">我们的团队</div>
+<div class="team_img">
+    <img src="img/service/team_img01.png" class="team_img_a">
+    <h4>黄铭梓</h4>
+    <h6>创始人&董事长</h6>
+
+    <p class="aboutus_p">深圳经济协会副会长，清华大学EMBA，资深跨境供应链金融专家，长期耕耘于电子产品、金融领域进行投资和创业。现为公司创始人兼董事长</p>
+
+    <img src="img/service/team_img02.png" class="team_img_a">
+    <h4>邹雨函</h4>
+    <h6>联合创始人&CEO</h6>
+
+    <p class="aboutus_p">清华大学创融产业协会副会长，英国格林威治大学项目管理硕士，清华大学EMBA，用于十余年科技企业管理经验，现为公司联合创始人兼CEO</p>
+
+</div>
+<!---->
+<div class="mlr">
+    <img src="img/service/team_img03.jpg" class="imgauto">
+
+    <div class="team_img03_c">
+        <span><h4>李汉源</h4><h6>运营总监</h6></span>
+        <span><h4>方楚旭</h4><h6>风控总监</h6></span>
+        <span><h4>谢佳坡</h4><h6>技术总监</h6></span>
+    </div>
+    <p class="aboutus_p">依托金融、供应链管理、互联网等领域资深人士组建的经营管理团队，倾力打造安全、透明、高效、稳定的在线投融资服务平台。</p>
+</div>
+<!--我们的团队-->
+
+<div class=" mlr">
+    <div class="aboutus_title">工作环境</div>
+    <img src="img/service/team_img04.jpg" class="imgauto">
+</div>
+<div class="aboutus_b">
+    专注于供应链垂直领域创新平台
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+document.write("<script language='javascript' src='/assets/js/util/common.js'></script>");
+document.write("<script language='javascript' src='/assets/js/formatutil.js'></script>");
+//滚动全局变量
+var options = {
+	useEasing: true,
+	useGrouping: true,
+	separator: ',',
+	decimal: '.',
+	prefix: '',
+	suffix: ''
+};
+
+
+//加载完毕
+$(function() {
+	$('.container').css('margin-bottom', '49px');
+
+	$('body').append('<div class="footer">' +
+		'<div class="footer_nav_list">' +
+		'<span class="footer_nav">' +
+		'<a href="javascript:void(window.location.href=(&quot;index.html?_='+Math.random()+'&quot;))" class="nav_index nav_index"><i></i><em>理财</em></a>' +
+		'</span>' +
+		'<span class="footer_nav">' +
+		'<a href="javascript:void(window.location.href=(&quot;assets.html?_='+Math.random()+'&quot;))" class="nav_assets  nav_assets_current"><i></i><em>资产</em></a>' +
+		'</span>' +
+		'<span class="footer_nav">' +
+		'<a href="javascript:void(window.location.href=(&quot;me.html?_='+Math.random()+'&quot;))" class="nav_me"><i></i><em>我</em></a>' +
+		'</span>' +
+		'</div>' +
+		'</div>');
+	
+	var toast=localStorage.toast;
+	if(toast!=null){
+		localStorage.removeItem('toast')
+		switch (toast) {
+		case "3":
+			Sys.showToast("赎回成功");
+			break;
+		default:
+		    break; 
+		}
+	}
+	
+	// 判断是否登录状态
+	if (refresh()) {
+		refreshLoginOk();
+	} else {
+		refreshNotLogin();
+	}
+
+	//菜单点击
+	$(".quick-entry").click(function() {
+		var $this=$(this);
+		if($this.index()==2){
+			if(refresh()){
+				var money=new Number(rmoney($('#useBalance').text()));
+				if(money>0){
+					window.location.href = $this.data("hidden").replace("file:///android_asset/", "");
+				}else{
+					Sys.showToast("您暂无可提现金额");
+				}
+			}else{
+				window.location.href = "login.html?return_url=" + $this.data("hidden").replace("file:///android_asset/", "");
+			}
+		}else if ($(this).data("login") && !refresh()) {
+			window.location.href = "login.html?return_url=" + $this.data("hidden").replace("file:///android_asset/", "");
+		} else {
+			window.location.href =  $this.data("hidden").replace("file:///android_asset/", "");
+		}
+	});
+
+
+	//资金统计
+	$("#myMoneyStatistics").click(function() {
+		if (refresh()) {
+			window.location.href = $(this).data("hidden").replace("file:///android_asset/", "");
+		} else {
+			window.location.href = "login.html";
+		}
+	});
+
+
+
+
+});
+
+
+
+
+
+
+
+//已登录
+function refreshLoginOk() {
+	//获取我的资金统计
+	$.getJSON('/getmymoneystatistics',getRequestData(), function(data) {
+		if (0 == data.error_code) {
+			var obj = jQuery.parseJSON(data.detail);
+	
+			var demo1 = new countUp("sumBalance", 0, obj.sumBalance, 2, 1, options);
+			demo1.start();
+	
+			var demo2 = new countUp("useBalance", 0, obj.useBalance, 2, 1, options);
+			demo2.start();
+	
+			var demo3 = new countUp("walletYesterdaySy", 0, obj.walletYesterdaySy, 2, 1, options);
+			demo3.start();
+	
+			var demo4 = new countUp("allSy", 0, obj.allSy, 2, 1, options);
+			demo4.start();
+		}else{
+			Sys.showToast("会话已失效,请重新登录");
+			//localStorage.clear();
+			refreshNotLogin();
+		}
+	}).error(function(){
+		requestError();
+	});
+	
+	var wallet_redeem_amount=localStorage.wallet_redeem_amount;
+	//如果投资过
+	if (wallet_redeem_amount != undefined && wallet_redeem_amount != null && wallet_redeem_amount != "") {
+		localStorage.removeItem('wallet_redeem_amount');
+		setTimeout(function() {
+			//alert(wallet_redeem_amount);
+			//添加动画
+			$('#redeem_amount_div').text("+" + wallet_redeem_amount);
+			$(".fade_in").fadeToggle();
+			$(".fade_in").fadeToggle("slow");
+			$(".fade_in").fadeToggle(2000);
+			$(".fade_in").hide();
+	
+		}, 1500);
+	}
+}
+
+//未登录
+function refreshNotLogin() {
+	$("#useBalance").text("0.00");
+	$("#walletYesterdaySy").text("0.00");
+	$("#allSy").text("0.00");
+	localStorage.clear();
+	$('.assets_total').empty().append('<span class="white_arrow"></span><span id="sumBalance" style="line-height:115px;font-size:28px;">点击登陆</span>');
+}
+
+
+
+
+
+
+document.getElementById("div_recharge").addEventListener("touchstart", touchStart, false);
+document.getElementById("div_recharge").addEventListener("touchmove", touchMove, false);
+document.getElementById("div_recharge").addEventListener("touchend", touchEnd, false);
+
+
+document.getElementById("div_trade_log").addEventListener("touchstart", touchStart, false);
+document.getElementById("div_trade_log").addEventListener("touchmove", touchMove, false);
+document.getElementById("div_trade_log").addEventListener("touchend", touchEnd, false);
+
+
+document.getElementById("div_withdraw").addEventListener("touchstart", touchStart, false);
+document.getElementById("div_withdraw").addEventListener("touchmove", touchMove, false);
+document.getElementById("div_withdraw").addEventListener("touchend", touchEnd, false);
+
+
+document.getElementById("div_wallet").addEventListener("touchstart", touchStart, false);
+document.getElementById("div_wallet").addEventListener("touchmove", touchMove, false);
+document.getElementById("div_wallet").addEventListener("touchend", touchEnd, false);
+
+document.getElementById("div_ydb").addEventListener("touchstart", touchStart, false);
+document.getElementById("div_ydb").addEventListener("touchmove", touchMove, false);
+document.getElementById("div_ydb").addEventListener("touchend", touchEnd, false);
+
+document.getElementById("div_news").addEventListener("touchstart", touchStart, false);
+document.getElementById("div_news").addEventListener("touchmove", touchMove, false);
+document.getElementById("div_news").addEventListener("touchend", touchEnd, false);
+
+
+
+function touchStart(event) {
+	this.style.background = "#e1e1e1";
+
+}
+
+function touchMove(event) {
+	this.style.background = "#FFF";
+
+}
+
+function touchEnd(event) {
+	this.style.background = "#FFF";
+}
+
+document.getElementById("myMoneyStatistics").addEventListener("touchstart", function(event) {
+	this.style.background = "#d9733e";
+
+}, false);
+
+
+document.getElementById("myMoneyStatistics").addEventListener("touchmove", function(event) {
+	this.style.background = "#fd7500";
+
+}, false);
+
+document.getElementById("myMoneyStatistics").addEventListener("touchend", function(event) {
+	this.style.background = "#fd7500";
+}, false);

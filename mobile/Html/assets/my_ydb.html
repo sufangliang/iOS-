@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的益定宝</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+</script>
+</head>
+<body class="bg-gray">
+
+<div class="container" style="margin-bottom:55px;">
+
+<!--我的益定宝头部数据开始-->
+<div class="row">
+    <div class="wallet_total wallet_totalon">
+      <p id="memberDsbj"></p>
+        <!-- 数字漂移div-->
+        <div  id="apply_amount_div"></div>
+      <span>益定宝锁定资金（元）</span>
+    </div>
+
+
+    <div class="num_bgwhite">
+      <p><em id="memberDslx"></em></p>
+      <p class="">待收收益（元）</p>
+    </div>
+
+    <div class="num_bgwhite">
+      <p><em id="dingSumSy"></em></p>
+      <p>累计收益（元）</p>
+    </div>
+ </div>
+
+  <!--我的益定宝头部数据结束-->
+
+
+
+<div class="row">
+
+  <ul class="me_regularly_ul">
+    <li class="current">持有中</li>
+    <li>已结清</li>
+  </ul>
+
+
+  <!--持有中-->
+  <div class="me_regularly_li" id="chi_you">
+  </div>
+  <!--持有中-->
+
+
+<!--已结清-->
+  <div class="me_regularly_li" style="display:none ;" id="clean_end">
+  </div>
+<!--已结清-->
+  
+
+  
+</div>
+ 
+
+</div>
+
+<div class="foot">
+  <div class="btn_go">
+      <a class="btn btn-primary btn-charge btn-charge-h" data-hidden="file:///android_asset/apply_ydb.html?flag=1" data-login="true">30天益定宝</a>
+      <a class="btn btn-primary btn-charge btn-charge-h" data-hidden="file:///android_asset/apply_ydb.html?flag=3" data-login="true" >90天益定宝</a>
+  </div>
+</div>
+
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/countUp/countUp.js" charset="utf-8"></script>
+<script src="js/formatutil.js"  charset="utf-8"></script>
+<script src="js/my_ydb.js"  charset="utf-8"></script>
+</body>
+</html>

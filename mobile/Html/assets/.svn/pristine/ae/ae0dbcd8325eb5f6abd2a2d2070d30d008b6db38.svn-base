@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>常见问题</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+</script>
+</head>
+
+    <body style="margin:0; padding:0; ">
+    <div class="ques_right_c" id="type1" style="display: block;">
+    <ul>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle21"> <span class="cjwd_num"></span>益大家有资金监管帐户么？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">益大家与宝付支付达成合作关系，宝付支付、连连支付为益大家开设了第三方专用资金账户，上述专用资金账户可以对于资金流出进行管理，确保投资人的资金安全。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle20"> <span class="cjwd_num"></span>在益大家投资是否受法律保护？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;"> （1）根据《合同法》第196条规定"借款合同是借款人向贷款人借款，到期返还借款并支付利息的合同"，《合同法》允许普通民事主体之间发生借贷关系，并允许出借方到期可以收回本金和符合法律规定的利息。<br>
+              （2）根据《关于人民法院审理借贷案件的若干意见》第6条：“民间借贷的利率可以适当高于银行的利率，各地人民法院可以根据本地区的实际情况具体掌握，但最高不得超过银行同类贷款利率的四倍。超出此限度的，超出部分的利息不予保护。”在益大家平台上发布融资项目的利率均符合上述规定。 </div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle19"> <span class="cjwd_num"></span>如何保证我的资金安全？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;"> 依托连连银通支付保障，民生银行代付系统，资金交易过程盗转盗用风险由阳光保险提供保障。 </div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle18"> <span class="cjwd_num"></span>为何要绑定手机？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">绑定手机，可以提高您账户的安全级别，及时得到益大家账户操作通知。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle17"> <span class="cjwd_num"></span>接收不到手机验证码？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">验证码短信有可能被当做垃圾短信误拦截，请您查看您的手机是否安装了拦截软件，或者如果您曾经向运营商投诉过xxx号段的骚扰短信。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle16"> <span class="cjwd_num"></span>为什么要进行实名认证？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">实名认证是为了确认投资人的身份以及保证投资借款合同的有效性与合法性。 为了确保您的资金安全，同时我们也会通过实名认证验证您设置的提现银行账户是否属于您本人。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle15"> <span class="cjwd_num"></span>实名认证无法通过是什么原因？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">如果您最近办理过户籍变更等相关手续，可能会导致无法实名认证成功。 如果您输入身份号码有误导致验证次数过多锁定无法认证，请联系我们客服工作人员。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle14"> <span class="cjwd_num"></span>实名认证成功后能修改吗？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">实名认证成功后不能修改。为确保用户更好的管理自己的账户资产，建议您谨慎填写您的认证信息。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle13"> <span class="cjwd_num"></span>如何进行实名认证？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;"> 提示：为确保投资人的资金安全，只有在完成实名认证后才能进行提现。<br>
+              登录后进入“我”，点击顶部“未认证”，未实名认证时会触发认证。
+             </div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle12"> <span class="cjwd_num"></span>益大家有哪些理财产品？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">益大家目前有两款产品：益钱包、益定宝。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle11"> <span class="cjwd_num"></span>如何进行投资？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;"> 按照以下步骤进行投资：<br>
+              &nbsp; （1）在益大家上注册，成为益大家用户；<br>
+              &nbsp; （2）点击"资产"页面的"充值"按钮给账户充值；<br>
+              &nbsp; （3）点击"理财"选择加入具体的投资项目。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle10"> <span class="cjwd_num"></span>投资人是否需要支付费用？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">
+              <p>投资人在益大家充值、投资、提现不需支付任何手续费。</p>
+            </div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle9"> <span class="cjwd_num"></span>投资后什么时候开始计算收益？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">投资项目开始计算收益的时间指益大家将筹款资金划款至借款人账户的时间，T+1起息。</div>
+      </li>
+          <!--<li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle9"> <span class="cjwd_num"></span>如何获取体验金？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">益大家会不定期开展回馈活动，体验金的获取条件会在第一时间通过网站公告、短信、微信、邮箱等渠道通知。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle8"> <span class="cjwd_num"></span>体验金如何使用？能否提现？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">用户获得的体验金可以投资于体验标，获取收益。到期后，已投资的体验金额归零，收益归入可用余额，投资实标后可以提现。体验金不能提现。</div>
+      </li>-->
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle8"> <span class="cjwd_num"></span>如何充值？是实时到帐吗？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">登录益大家后进入“资产”点击“充值”，输入充值金额，点击“充值按钮”跳转到对应银行的支付网关完成充值。益大家在收到来自第三方支付的扣款成功通知消息后，会在您的益大家账户余额中做记账处理。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle7"> <span class="cjwd_num"></span>如何设置提现卡/绑定卡？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">绑定银行卡指的是在益大家平台储存您的银行卡信息，在方便您之后提现操作的同时保障您的账户安全。在第一次提现之前需要绑定一张银行卡，绑定银行卡的操作非常简单，您只需提供您的银行卡号、开户银行及开户支行。请注意，您绑定的银行卡的持卡人需与您之前认证的姓名相符，否则将不能进行银行卡绑定。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle6"> <span class="cjwd_num"></span>如何进行提现？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">
+              &nbsp; 登录后进入“资产”页面，点击提现按钮，按提示操作；</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle5"> <span class="cjwd_num"></span>投资人申请提现后何时到账？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">T+1到账, 双休或节假日顺延</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle4"> <span class="cjwd_num"></span>为什么银行扣钱了益大家账户余额却没有增加？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;"> 这种情况可能由以下几种原因导致：<br/>
+              &nbsp;（1）银行已扣款，但是可能由于银行系统原因，资金没有同步到第三方支付平台，第三方支付平台没有收到扣款，您的益大家账户余额就不会增加，这种情况您不用担心，银行会在发现问题之后和第三方支付平台对接，第三支付平台收到资金之后，您的益大家账户余额就会增加，如银行没有把钱对接给第三方支付平台，会在2个工作日之内把钱退回您的银行卡。<br>
+              &nbsp;（2）第三方支付平台判断您的网络存在钓鱼风险，自动关闭交易，您的钱会在2个工作日之内退回您的银行卡。发生此情况请准备您充值时产生的订单号，联系益大家客服进行处理。 </div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle3"> <span class="cjwd_num"></span>忘记登录密码怎么办？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">在登录页面选择“忘记密码”进行重置，用户通过绑定的手机短信进行验证重置。</div>
+      </li>
+      <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle2"> <span class="cjwd_num"></span>忘记交易密码怎么办？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">登录益大家后进入“我”点击“密码设置”里面的“交易密码”按提示操作。</div>
+      </li>
+          <li>
+        <div style="display:block;" class="cjwd_div" id="clickTitle1"> <span class="cjwd_num"></span>什么情况账户会被锁定？账户被锁定后怎么处理？ <img align="right" src="img/cjbottom.gif"/> </div>
+        <div class="cjwd_div_2" style="display: none;">
+              <p>交易密码连续输错5次账户会被锁定，账户锁定24小时后会自动解锁。您也可以发送用户名和身份证正反面照片客服邮箱：customer_service@178bank.cn，并在照片上注明“仅用于益大家账户解锁使用”，客服人员会第一时间帮您办理账号解绑，并通过邮件方式或手机方式提醒。</p>
+              <br/>
+              <br/>
+            </div>
+      </li>
+        </ul>
+  </div>
+    <script src="static/js/jquery-2.0.3.min.js"></script>
+    <script src="js/problem.js"  charset="utf-8"></script>
+</body>
+</html>

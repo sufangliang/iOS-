@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>益定宝-1个月</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css">
+  <script type="application/javascript" src="js/fastclick.js"></script>
+  <script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+  </script>
+</head>
+<body class="bg-gray">
+
+<div class="container" style="margin-bottom:55px;">
+
+<!--益定宝头部数据开始-->
+ <div class="row regularly">
+    <div class="regularly_total">
+      <p><em id="yearRate">11</em>%</p>
+      <span>年化收益率</span>
+    </div>
+
+  <div class="regularly_num_bg" id="bg_progress"  style="width:0%">
+
+      <div class="regularly_num_bg2"></div>
+
+
+  </div>
+
+  <div class="regularly_num">
+  
+    <div class="num_bgwhite">
+      <p><em id="remain_amount"></em></p>
+      <p>可购金额（元）</p>
+    </div>
+
+    <div class="num_bgwhite">
+      <p><em id="progress"></em></p>
+      <p>已售出（满额起息）</p>
+    </div>
+    
+  </div>
+    
+    
+ </div> 
+<!--益定宝头部数据结束-->
+<!--益定宝文字介绍开始-->
+ <div class="row">
+ 
+    <div class="wallet_js">
+    
+     <div class="wallet_js_c">
+      <h4><em>1</em>产品说明</h4>
+      <p>益定宝类似于银行定期，具有一定的锁定期限。根据锁定时间不同分为一月、三月，收益分别为11%、12%。益定宝为固定收益，是益大家金融推出保本保息的优质理财产品。</p>
+     </div>
+     
+     <div class="wallet_js_c">
+      <h4><em>2</em>保障方式</h4>
+      <p>阳光保险承保交易资金安全；<br>
+        深圳大雨基金管理有限公司（协会登记编号：P1018082）依托银行渠道，全程动态监管资金，并提供有效担保。</p>
+     </div>
+     
+     <div class="wallet_js_c">
+      <h4><em>3</em>投资方向</h4>
+      <p>采用基金管理模式，通过债权转让的形式将资金投入稳健型跨境供应链金融项目。</p>
+     </div>
+     
+     <div class="wallet_js_c">
+      <h4><em>4</em>起投金额：<label id="min_num">500</label>元起投</h4>
+     </div>    
+    
+     <div class="wallet_js_c wallet_js_cno">
+      <h4><em>5</em>收益规则</h4>
+      <p>益定宝当日投资，满额起息。到期日过后隔日，本金和收益将会自动赎回到您的帐户余额内。</p>
+     </div>
+     
+    </div>
+
+ </div>
+ <!--益定宝文字介绍结束-->
+   
+</div>
+
+
+<div class="foot">
+<!--立即投资-->
+<div class="btn_go" id="goto_apply"> <a class="btn btn-primary btn-a" data-hidden="file:///android_asset/apply_ydb.html" data-login="true">立即投资</a> </div>
+<!--立即投资-->
+
+<!--已结束-->
+<div class="btn_go" id="finished" style="display: none;"> <div class="btn-g">已结束</div> </div>
+<!--已结束-->
+</div>
+
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="js/formatutil.js"  charset="utf-8"></script>
+<script src="js/about_ydb.js"  charset="utf-8"></script>
+</body>
+</html>

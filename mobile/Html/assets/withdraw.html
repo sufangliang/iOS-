@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>提现</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<script type="application/javascript">
+        window.addEventListener('load', function () {
+            FastClick.attach(document.body);
+        }, false);
+</script>
+</head>
+<body>
+<div class="container container_box">
+    <form id="frmWithdraw">
+
+        <div class="form-group">
+            <!--可用余额-->
+            <input type="hidden" id="usebalance"/>
+            <label for="amount">提现金额</label>
+            <input type="text"  id="amount" name="amount" class="form-control" placeholder="可用余额获取中..." maxlength="20"/>
+            <input type="button"  id="allButton" class="prompt_all" value="全部" />
+        </div>
+        <div class="form-group">
+            <label for="payPwd">交易密码</label>
+            <input type="password"  id="payPwd" name="payPwd" class="form-control" placeholder="请输入交易密码" maxlength="20" />
+            <input type="button" class="hide_eye" value="" id="toggle_eye">
+        </div>
+        <input type="button" class="btn btn-primary form-control" value="提现" id="withdrawButton"/>
+
+    </form>
+    <div class="prompt">
+        <h4>温馨提示：</h4>
+        <p>1.为了您的资金安全，请确保提现银行账号的姓名和您进行实名验证的姓名一致</p>
+        <p>2.提现过程遇到问题，请联系客服400-8533-178</p>
+    </div>
+</div>
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="js/formatutil.js" charset="utf-8"></script>
+<script src="js/withdraw.js" charset="utf-8"></script>
+</body>
+</html>

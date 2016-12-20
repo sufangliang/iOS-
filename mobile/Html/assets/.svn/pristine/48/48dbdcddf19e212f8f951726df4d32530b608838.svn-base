@@ -1,0 +1,38 @@
+	document.write("<script language='javascript' src='/assets/js/util/common.js'></script>");
+	document.write("<script language='javascript' src='/assets/js/util/md5.js'></script>");
+//加载完毕
+$(function() {
+	
+	$('#loginButton').click(function() {
+		//$('#frmLogin').submit();
+		if(Validate._mobile('username')&&Validate._pwd('pwd')){
+			var mobile = $('#username').val();
+			var pwd = $('#pwd').val();
+			var signature = CryptoJS.MD5(mobile + " " + CryptoJS.MD5(pwd).toString()).toString();
+			$.post('/login', {
+				mobile: mobile,
+				signature: signature
+			}, function(data) {
+				if (0 == data.error_code) {
+					localStorage.signature=signature;
+					localStorage.mobile=mobile;
+					localStorage.pwd=CryptoJS.MD5(pwd).toString();
+					window.location.href=urlJson.base + "/index.html";
+				} else {
+					Sys.showToast(remoteMessage(data.error_code));
+				}
+			}, 'json').error(function(){
+    			requestError();
+    		});
+		};
+	});
+
+	$('#gotoRegister').click(function() {
+		window.location.href=urlJson.base + "/register.html";
+	});
+
+	$('#gotoChangePassword').click(function() {
+		window.location.href=urlJson.base + "/setting_login_pwd.html";
+	});
+
+});

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  mobile
+
+  Created by ChenLei on 15/9/12.
+  Copyright (c) 2015年 edaga. All rights reserved.
+*/
+
+// tab bar
+
+"Money" = "理财";
+
+"Assets" = "资产";
+
+"Profile" = "我";

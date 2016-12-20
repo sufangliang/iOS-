@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>修改登录密码</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="js/fastclick.js"></script>
+    <script type="application/javascript">
+        window.addEventListener('load', function () {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+</head>
+
+<body>
+<div class="container container_box">
+    <form id="frmSetpwd">
+
+        <div class="form-group">
+            <label for="mobile">手机号</label>
+            <input type="number"  id="mobile" name="mobile" class="form-control" placeholder="请输入手机号" maxlength="11"/>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="pwd">新密码</label>
+            <input type="password"  id="pwd" name="pwd" class="form-control" placeholder="请输入新密码" maxlength="20"/>
+            <input type="button" class="hide_eye" value="" id="toggle_eye">
+        </div>
+
+
+        <div class="form-group">
+            <label for="code">手机验证码</label>
+
+            <div class="input-group">
+                <input type="number" placeholder="请输入手机验证码" class="form-control"  id="code" name="code" maxlength="4"/>
+
+                <div style="padding: 0px;border:0px;" class="input-group-addon">
+                    <input type="button" class="btn btn-primary btn-yzm"value="获取手机验证码" id="sendMsgButton" style="color:#d0e6ff; background-color:#99ccff;" disabled />
+                </div>
+            </div>
+        </div>
+
+        <input type="button" class="btn btn-primary btn-block form-control" value="提交" id="sureButton" style="color:#d0e6ff; background-color:#99ccff;" disabled/>
+
+
+    </form>
+</div>
+
+
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="js/common.js" charset="utf-8"></script>
+<script src="js/setting_login_pwd.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+		<title>我的二维码</title>
+		<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+		<style type="text/css">
+			body {
+				background-color: #eee;
+			}
+			
+			#qrcode {
+				margin-top: 50px;
+				text-align: center;
+			}
+			
+			#qrcode img{
+			 width: 160px; height: 160px; margin:0px auto; border-bottom:1px solid #e6e6e6;
+			}
+			.title {
+				color: #666666;
+				display: block;
+				margin:0;
+				padding-bottom:10px;
+				padding-top:10px;
+				font-size:18px;
+			}
+			
+			.qrcode_c {
+				color: #666666;
+				display: block;
+				margin-top: 10px;
+				font-size:14px;
+				text-align:center;
+				line-height:20px;
+			}
+		</style>
+		<script type="application/javascript" src="js/fastclick.js"></script>
+		<style type="text/css">
+			* { -webkit-user-select : none; }
+		</style>
+		<script type="application/javascript">
+        window.addEventListener('load', function () {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+	</head>
+	<body>
+		<div class="container" style="text-align:center;">
+			<div id="qrcode"></div>
+            <p class="title">我的二维码</p>
+			<p class="qrcode_c">邀请好友通过微信或手机浏览器<br>“扫一扫”即可注册益大家金融</p>
+		</div>
+		
+		<script src="static/js/jquery-2.0.3.min.js"></script>
+		<script src="static/js/qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/qrcode.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

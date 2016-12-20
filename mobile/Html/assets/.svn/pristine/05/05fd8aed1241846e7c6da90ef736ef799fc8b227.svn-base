@@ -1,0 +1,50 @@
+	document.write("<script language='javascript' src='/assets/js/util/common.js'></script>");
+
+	//加载完毕
+    $(function() {
+    	$('.user_ul>li').click(function(){
+        		window.location.href =  $(this).data("hidden").replace("file:///android_asset/", "");
+        	});
+        $('#welcome').hide();
+    });
+
+
+
+
+
+
+
+
+document.getElementById("aboutus").addEventListener("touchstart", touchStart, false);
+document.getElementById("aboutus").addEventListener("touchmove", touchMove, false);
+document.getElementById("aboutus").addEventListener("touchend", touchEnd, false);
+
+
+document.getElementById("mode").addEventListener("touchstart", touchStart, false);
+document.getElementById("mode").addEventListener("touchmove", touchMove, false);
+document.getElementById("mode").addEventListener("touchend", touchEnd, false);
+
+
+document.getElementById("aqbz").addEventListener("touchstart", touchStart, false);
+document.getElementById("aqbz").addEventListener("touchmove", touchMove, false);
+document.getElementById("aqbz").addEventListener("touchend", touchEnd, false);
+
+
+document.getElementById("contactus").addEventListener("touchstart", touchStart, false);
+document.getElementById("contactus").addEventListener("touchmove", touchMove, false);
+document.getElementById("contactus").addEventListener("touchend", touchEnd, false);
+
+
+
+function touchStart(event) {
+  this.style.background = "#e1e1e1";
+}
+
+function touchMove(event) {
+  this.style.background = "#FFF";
+}
+
+function touchEnd(event) {
+  this.style.background = "#FFF";
+}
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>资产</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<style type="text/css">
+    * { -webkit-user-select : none; }
+</style>
+<script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+</script>
+</head>
+
+<body class="bg-gray">
+<div class="container">
+    <!--资产-->
+    <div class="row" style="padding-bottom:20px;">
+
+
+        <div class="assets_total" id="myMoneyStatistics"
+             data-hidden="file:///android_asset/my_money_statistics.html" data-login="true">
+            <span class="white_arrow"></span>
+
+            <p id="sumBalance">0.00</p>
+
+            <em>
+                <span>可提现：<em id="useBalance">0.00</em></span>
+                <i class="fade_in" id="redeem_amount_div"></i>
+            </em>
+
+        </div>
+
+
+        <div class="num_bgwhite num_bgwhite2">
+            <p><em id="walletYesterdaySy">0.00</em></p>
+
+            <p>昨日收益（元）</p>
+        </div>
+
+        <div class="num_bgwhite num_bgwhite2">
+            <p><em id="allSy">0.00</em></p>
+
+            <p>累计收益（元）</p>
+        </div>
+
+    </div>
+    <!--资产end-->
+    <div class="row bg-white">
+        <!--快速入口-->
+
+        <div class="col-xs-4 quick-entry" data-hidden="file:///android_asset/recharge.html"
+             data-login="true" id="div_recharge">
+            <img class="img-responsive" src="img/icon_12.png">
+
+            <p class="text-center">充值</p>
+        </div>
+        <div class="col-xs-4 quick-entry" data-hidden="file:///android_asset/tradelog.html"
+             data-login="true" id="div_trade_log">
+            <img class="img-responsive" src="img/icon_13.png">
+
+            <p class="text-center">资金流水</p>
+        </div>
+        <div class="col-xs-4 quick-entry" data-hidden="file:///android_asset/withdraw.html"
+             data-login="true" id="div_withdraw">
+            <img class="img-responsive" src="img/icon_14.png">
+
+            <p class="text-center">提现</p>
+        </div>
+        <div class="col-xs-4 quick-entry" data-hidden="file:///android_asset/my_wallet.html"
+             data-login="true" id="div_wallet">
+            <img class="img-responsive" src="img/icon_01.png">
+
+            <p class="text-center">我的益钱包</p>
+        </div>
+        <div class="col-xs-4 quick-entry" data-hidden="file:///android_asset/my_ydb.html"
+             data-login="true" id="div_ydb">
+            <img class="img-responsive" src="img/icon_15.png">
+
+            <p class="text-center">我的益定宝</p>
+        </div>
+        <div class="col-xs-4 quick-entry" data-hidden="file:///android_asset/news.html"
+             data-login="false" id="div_news">
+            <img class="img-responsive" src="img/icon_16.png">
+            <p class="text-center">资讯</p>
+        </div>
+
+
+
+
+
+        <!--快速入口 end-->
+
+    </div>
+</div>
+
+<script src="static/js/jquery-2.0.3.min.js" charset="utf-8"></script>
+<script src="static/js/bootstrap.min.js" charset="utf-8"></script>
+<script src="static/js/countUp/countUp.js" charset="utf-8"></script>
+<script src="js/common.js" charset="utf-8"></script>
+<script src="js/assets.js" charset="utf-8"></script>
+</body>
+</html>

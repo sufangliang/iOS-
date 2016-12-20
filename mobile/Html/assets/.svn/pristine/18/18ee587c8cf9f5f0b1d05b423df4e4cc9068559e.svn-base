@@ -1,0 +1,49 @@
+	document.write("<script language='javascript' src='/assets/js/util/common.js'></script>");
+	//加载完毕
+	$(function(){
+	
+	   //投资定期
+	  $("a").click(function() {
+	        //跳转到相关页面
+	        if($(this).data("login") && !refresh()){
+	        	window.location.href = "login.html?return_url=" + $(this).data("hidden").replace("file:///android_asset/", "")+"?flag=newbie";
+	        }else{
+	        	window.location.href = $(this).data("hidden").replace("file:///android_asset/", "")+"?flag=newbie";
+	        }
+	        
+	    });
+	
+	  //投资方向
+	  $("#security_div,#tz_fx_div,#problem_div").click(function() {
+	             //跳转到相关页面
+	           window.location.href = $(this).data("hidden").replace("file:///android_asset/", "")+"?flag=newbie";
+	        });
+	
+	
+	  //查询定期信息
+	  getDqByFlag("newbie");
+	});
+
+
+	//定期信息
+	function getDqByFlag(flag) {
+		$.getJSON('/getdqbyflag', {flag: flag}, function(data) {
+			if (0 == data.error_code) {
+				var obj = jQuery.parseJSON(data.detail);
+				$("#min_num").text(obj.min_num);
+				$("#max_num").text(obj.max_num);
+				$("#lock_day_1").text(obj.step);
+				$("#lock_day_2").text(obj.step);
+				$("#year_rate_1").text(obj.rate);
+				$("#year_rate_2").text(obj.rate);
+			} else {
+				Sys.showToast(remoteMessage(data.error_code));
+			}
+		}).error(function() {
+			requestError();
+		});
+	}
+
+
+
+

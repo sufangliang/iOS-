@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>资讯</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css" />
+<style>
+	.media-body h4 {
+		color: #333;
+		font-size: 16px;
+	}
+	.media-body h6 {
+		color: #888;
+		padding-bottom: 3px;
+	}
+	.media-body p {
+		height: 2.7em;
+		overflow: hidden;
+		margin-bottom: 0px;
+		color: #666;
+	}
+	.list-group a:link,
+	a:visited,
+	a:hover,
+	a:active {
+		color: #333;
+		text-decoration: none;
+	}
+	.loading {
+		display: none;
+		color: #afb8bb;
+		position: absolute;
+		left: 50%;
+		margin-left: -18px;
+	}
+	.container-fluid {
+		padding: 0px;
+	}
+</style>
+    <script type="application/javascript" src="js/fastclick.js"></script>
+    <script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+
+    </script>
+</head>
+
+<body>
+<div class="container-fluid" style="position: relative;">
+	<ul class="list-group">
+		<!--
+		<li class="list-group-item" id="1">
+			<a class="media" href="#">
+				<div class="media-left">
+					<img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGVhYTM3M2U1NyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZWFhMzczZTU3Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg=="
+					data-holder-rendered="true" style="width: 80px; height: 80px;">
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">中国好声音</h4>
+					<h6 style="margin: 0 0;">2015-07-20 15:33:25</h6>
+					<p>《中国好声音第四季》是由浙江卫视和星空传媒强力打造的大型励志专业音乐评论节目，它是继《中国好声音第一季》、《中国好声音第二季》、《中国好声音第三季》之后的又一力作。 2015年1月周杰伦确定担任首位导师[1-3] ，3月庾澄庆重回导师席后，4月那英和汪峰已确认继续稳坐红色转椅，以“三生一旦”阵容尘埃落定。 《中国好声音4》的导师名单已经确定为：周杰伦、庾澄庆、那英、汪峰。</p>
+				</div>
+			</a>
+		</li>
+		-->
+	</ul>
+	<!--
+	<div class="text-center">
+		<a href="javascript:loadMore()" id="loadMore">加载更多>></a>
+	</div>
+	<i class="fa fa-spinner fa-spin fa-5x loading"></i>
+	-->
+</div>
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script>
+
+/*
+function loadMore(){
+	$('.loading,#loadMore').toggle();
+	// 为了测试，延迟1秒加载
+    setTimeout(function(){
+    	for(var a=0;a<3;a++,i++){
+            $('.list-group').append(
+				'<li class="list-group-item" id="'+i+'">'+
+					'<a class="media" href="#">'+
+						'<div class="media-left">'+
+								'<img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGVhYTM3M2U1NyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZWFhMzczZTU3Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg=="'+
+								'data-holder-rendered="true" style="width: 80px; height: 80px;">'+
+						'</div>'+
+						'<div class="media-body">'+
+							'<h4 class="media-heading">一站到底</h4>'+
+							'<h6 style="margin: 0 0;">2015-07-20 15:33:25</h6>'+
+							'<p>江苏卫视2012年3月2日推出全新益智答题类节目《一站到底》，该档节目是由美国NBC《Who"s still standing》改编而来。这是一档形式新颖，趣味十足，在挑战中挖掘个性，又充满悬念的全新益智攻擂节目。</p>'+
+						'</div>'+
+					'</a>'+
+				'</li>'
+			);
+		}
+		$('.loading,#loadMore').toggle();
+		var k='#'+(i-1);
+		$('body').animate({scrollTop:$(k).offset().top}, 800);
+    },1000);
+}
+
+$('.container-fluid').on('click','.list-group-item',function(){
+	alert($(this).data('id'));
+});
+*/
+</script>
+<script src="js/news.js" charset="utf-8"></script>
+<script src="js/common.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>密码设置</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<style type="text/css">
+  * { -webkit-user-select : none; }
+</style>
+<script type="application/javascript">
+      window.addEventListener('load', function () {
+          FastClick.attach(document.body);
+      }, false);
+ </script>
+</head>
+
+<body class="bg-gray">
+
+<ul class="user_ul setting_pwd">
+  <li id="loginPwdLi" data-hidden="file:///android_asset/setting_login_pwd.html" data-login="true"><span class="color6">登录密码：</span>已设置<span class="default_arrow"></span></li>
+  <li id="payPwdLi" data-hidden="file:///android_asset/setting_pay_pwd.html" data-login="true"><span class="color6">交易密码：</span><span id="payPwd">未设置</span><span class="default_arrow"></span></li>
+</ul>
+
+<script src="static/js/jquery-2.0.3.min.js" charset="utf-8"></script>
+<script src="static/js/bootstrap.min.js" charset="utf-8"></script>
+<script src="js/common.js" charset="utf-8"></script>
+<script src="js/setting_pwd.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+var timer=3;
+
+$(function(){
+	$('.return_wz>p').empty().append('<span id="timeout">3&nbsp;</span>秒后自动返回到首页..');
+	setInterval("timeout()", 1000);  
+});
+
+function timeout(){
+	
+	timer=--timer;
+	if(timer==0){
+		window.location.href='http://www.178bank.net"+urlJson.base+"/assets.html';
+	}else{
+		document.getElementById('timeout').innerHTML=timer;
+	}
+}

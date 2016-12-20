@@ -1,0 +1,33 @@
+//加载完毕
+$(function() {
+
+  //获取最大的可提取金额
+  loadURL(wrapIosNativeCallback("myWalletMaxRedeem"));
+
+  //赎回
+  $('#redeemButton').click(function() {
+    loadURL(wrapIosNativeCallback("walletRedeem", $('#amount').val(), $('#payPwd').val(), $('#maxRedeemAmount').val()));
+  });
+
+  //全部
+  $('#allButton').click(function() {
+    $('#amount').val($('#maxRedeemAmount').val());
+  });
+//眼睛
+   $("#toggle_eye").click(function(){
+        $("#toggle_eye").toggleClass("show_eye");
+        if("password"==$("#pwd").attr("type")){
+           $("#pwd").attr("type","text");
+        }else if("text"==$("#pwd").attr("type")){
+           $("#pwd").attr("type","password");
+        }
+         $("#pwd").focus();
+     });
+});
+
+//获取我的最大赎回金额
+function getMyWalletMaxRedeem(amount) {
+  $('#amount').attr("placeholder", "可赎回金额" + formatMoney(amount) + "元")
+    //最大赎回金额
+  $('#maxRedeemAmount').val(amount);
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>益大家金融，现金红包大派送，还能抽奖iphone6S!</title>
+<meta name="keywords" content="益大家益大家金融，现金红包大派送，还能抽奖iphone6S!">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no minimal-ui">
+<meta name="apple-mobile-web-app-title" content="益大家金融，现金红包大派送，还能抽奖iphone6S!">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+<style type="text/css">
+.layoutfix, img { display: block }
+.wrap, img { width: 100% }
+.chang_mobileNum, .note_newuser, .note_olduser, input { -webkit-box-sizing: border-box }
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, tr, tt, u, ul, var, video { margin: 0; padding: 0; border: 0; -webkit-appearance: none }
+html { font-size: 62.5% }
+body { font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica, STHeiti; color: #666; -webkit-user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: none; -webkit-overflow-scrolling: none; background-color: #fff }
+.banner, .input-wrap, .layoutfix, .nav_top, .result_box, .user, .wrap { overflow: hidden }
+ul li { list-style: none }
+a { text-decoration: none }
+img { border: 0 }
+.hidden { display: none }
+.org { color: #ff5a21 }
+.wrap { margin: 0 auto; background-color: #fff; font-size: 1.4rem; max-width: 640px }
+.user, .wrap_result { background-color: #ff6100; }
+.banner { position: relative }
+.container_box { padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 20px; background-color: #fbf2e1; }
+.form-group { position: relative; }
+.form-group .form-control { height: 40px; padding: 6px 8px; }
+/*去除投影*/
+.form-control { -webkit-box-shadow: none; box-shadow: none; -webkit-transition: none; -o-transition: none; transition: none; border-radius: 2px; }
+.form-control:focus { -webkit-box-shadow: none; box-shadow: none; }
+.btn-yzm { background: #f78600 none repeat scroll 0 0; margin: 0; }
+.btn-primary { border: medium none; color: #fff; font-size: 16px; height: 40px; }
+/*按钮样式*/
+.btn-primary { background-color: #fd7400; border: none; color: #FFF; font-size: 16px; height: 40px; }
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary { color: #fff; background-color: #e76a00; border: none; }
+.btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled], .btn-primary.active[disabled], .btn-primary.focus[disabled], .btn-primary[disabled]:active, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover {
+    background-color: #e76a00;
+    border-color: #2e6da4;
+}
+
+
+/*介绍切换*/
+.tabBox { margin-top: 5px; position: relative }
+.nav_top li { float: left; width: 33%; border-bottom: 1px solid #eaeaea; height: 40px; line-height: 40px; font-size: 1.5rem; color: #666; text-align: center; }
+.nav_top li:last-child { margin-right: 0; width: 33% }
+.nav_top li.on { color: #ff6100; border-bottom: 1px solid #f60; }
+.nav_top li:hover { cursor: pointer; }
+.nav_top li.nsp { -webkit-box-flex: 3; border-bottom: 0 none }
+.nav_mid { -webkit-transform: translate3d(0, 0, 0) }
+.nav_mid .intro { display: none; padding: 10px 3%; line-height: 150%; background-color: #fff }
+.nav_mid .intro p, .prize_list li { padding: 5px 0 }
+.nav_mid .intro.show { display: block }
+.nav_mid .intro span { font-size: 1.5rem; color: #333 }
+.nav_mid .intro strong { color: #000 }
+
+/*弹出模态框*/
+#imgbox_overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; _height: 800px; background-color: #000; z-index: 10; }
+.prompt{ background-color: #fffbf3; border: 2px solid #352c28; font-size:12px; border-radius:4px; text-align:center;width:280px; margin-left:-140px; top:18%; left:50%; overflow: hidden; position: fixed; z-index: 99; padding:20px 12px 20px 12px; }
+.prompt .prompt_t{ font-size:16px; height:28px; line-height:28px; color:#e75702; text-align:center; padding-bottom:15px; }
+.prompt p{ font-size:12px; line-height:22px; padding-top:10px; padding-bottom:15px;}
+/*.prompt .btn_an{ width:252px; height:32px; line-height:32px; background-color:#fd7400; color:#fff; text-align:center; display:block; cursor:pointer; text-decoration: none;}*/
+.prompt img{ width:160px; height:160px; margin:0 auto; margin-bottom:10px; }
+
+
+/*提示*/
+.toast {
+	display: none;
+	position: fixed;
+	text-align:center;
+	left: 5px;
+	right: 5px;
+	bottom: 15%;
+	z-index: 9999 !important;
+	font-size:16px;
+}
+.toast>div {
+	background: #333;
+	display:inline-block;
+	opacity: 0.9;
+	border-radius: 1px;
+	margin: auto;
+	text-shadow: none;
+	color: #DDD;
+	text-align: center;
+	padding: 10px 20px;
+	border-radius:10px;
+}
+/*提示*/
+</style>
+
+<script src="static/js/jquery-2.0.3.min.js" charset="utf-8"></script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+	var url = location.href.split('#')[0];
+	$.getJSON('/weixin/getsignpackage?url=' + url, function(r) {
+		wx.config({
+                debug: false,
+                appId: r.appid,
+                timestamp: r.timestamp,
+                nonceStr: r.nonceStr,
+                signature: r.signature,
+                jsApiList: [
+                    'checkJsApi',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+                    'hideMenuItems',
+                ]
+			});
+        // 调用微信API
+        wx.ready(function(){
+                var sdata = {
+                    title: '益大家金融，现金红包大派送，还能抽奖iphone6S!',
+                    desc: '益大家金融，现金红包大派送，还能抽奖iphone6S!',
+                    link: 'http://www.178bank.net/weixin/register.html?inviteCode='+queryString('inviteCode'),
+                    imgUrl: 'http://www.178bank.net/public/assets/img/huodong/share_weixin.jpg',
+                    // success: function () {
+                    //     alert('用户确认分享后执行的回调函数');
+                    // },
+                    // cancel: function () {
+                    //     alert('用户取消分享后执行的回调函数');
+                    // }
+                };
+                wx.onMenuShareTimeline(sdata);
+                wx.onMenuShareAppMessage(sdata);
+            });
+		wx.error(function(res){
+			console.log(res);
+		});
+	});
+</script>
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?6fa3f05fa5777597602e3336c95bc5a5";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+</head>
+<body>
+<div style="display:none"> <img src="img/huodong/share_weixin.jpg" id="share-img"> </div>
+<div class="wrap">
+  <section class="banner"> <img src="img/huodong/weixin_bg.jpg" alt=""> </section>
+  <section class="container_box">
+    <form id="frmRegister" action="">
+
+
+      <div class="form-group">
+        <input type="number" maxlength="11" placeholder="请输入手机号" class="form-control" id="mobile" name="mobile">
+      </div>
+
+
+      <div class="form-group">
+        <input type="password" maxlength="20" placeholder="请输入英文/数字组合密码" class="form-control" id="pwd" name="pwd">
+      </div>
+
+
+
+      <div class="form-group">
+        <div class="input-group">
+          <input type="number" maxlength="4" placeholder="请输入手机验证码" class="form-control" name="code" id="code">
+          <div style="padding: 0px;border:0px;" class="input-group-addon">
+            <input type="button" value="获取手机验证码" id="sendMsgButton" class="btn btn-primary btn-yzm">
+          </div>
+        </div>
+      </div>
+
+
+        <!-- 防止 邀请码 校验出错-->
+    <div class="form-group" style="display:none">
+        <label for="inviteCode">推荐人</label>
+        <input type="text" name="inviteCode" id="inviteCode" class="form-control" placeholder="请填写推荐人手机号" maxlength="20" />
+    </div>
+
+     <!--勾选框防止js校验出错-->
+    <div class="pb10" style="display:none">
+        <input type="checkbox" name="check" checked="checked" id="regBox" >
+        &nbsp;同意<a href="javascript:void(0)" id="registerProtocol">《益大家注册协议》</a>及<a href="javascript:void(0)" id="serviceProtocol">《益大家服务条款》</a>
+    </div>
+
+
+      <input type="button" id="registerButton" value="注册领取" class="btn btn-primary form-control" >
+
+    </form>
+  </section>
+  
+  <!--介绍切换-->
+  <section class="tabBox">
+    <ul class="nav_top">
+      <li class="on">活动说明</li>
+      <li>产品介绍</li>
+      <li>平台介绍</li>
+    </ul>
+    <div class="nav_mid">
+    
+     <div class="intro" style="display:block;">
+        <p><span>现金红包大派送，还能抽奖iphone6S!</span><br>
+          1.注册益大家金融账户<br>
+          2.存入益钱包（10元起投，7天封闭期后可取走）<br>
+          3.即可参与iPhone6S大抽奖<br>
+          4.C01摊位活动现场还可领现金红包，及各种礼品等你来拿
+          </p>
+        
+      </div>
+    
+      <div class="intro">
+        <p><span>益钱包</span><br>
+          投资门槛：10元<br>
+          年化收益：9%-11% 银行活期存款的40倍<br>
+          产品特点：产品采用自动升级收益功能，灵活方便，复利滚动<br>
+          收益每日可查，7天封闭期后支持随存随取,快捷支付，支持多家主流银行</p>
+        <p><span>益定宝</span><br>
+          投资门槛：500元<br>
+          年化收益：高收益，年化收益达12%<br>
+          投资期限：1~6个月<br>
+          产品特点：透明化运营模式，资金专款专用；省心，一次性还本付息</p>
+      </div>
+      
+      <div class="intro">
+        <p>益大家金融完全透明化运营模式，理财产品0风险，安全放心的投融资理财平台</p>
+        <p>投资收益最高达12%！</p>
+        <p>华润银行与益大家金融建立战略合作，阳光保险承保益大家金融资金交易安全。</p>
+        <p> 为您服务<br>
+          益大家金融官网：www.178bank.cn<br>
+          客服电话：400-8533-178<br>
+          微信公众号：益大家金融</p>
+      </div>
+      
+    </div>
+  </section>
+  <!--介绍切换--> 
+</div>
+
+<script src="js/register.js" charset="utf-8"></script>
+<script type="text/javascript">
+	$('.nav_top').on('click','li',function(){
+		$('.nav_top li').removeClass('on');
+		$(this).addClass('on');
+				
+		$('.intro').hide();
+		$(".intro:eq("+$('.nav_top li').index(this)+")").show();;
+	});
+	
+	//获取URL参数
+	function queryString(item) {
+		var sValue = location.search.match(new RegExp("[\?\&]" + item + "=([^\&]*)(\&?)", "i"))
+		return sValue ? sValue[1] : sValue
+	}
+</script>
+</body>
+</html>

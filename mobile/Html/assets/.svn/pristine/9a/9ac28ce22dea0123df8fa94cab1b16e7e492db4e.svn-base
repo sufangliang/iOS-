@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>实名认证</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="js/fastclick.js"></script>
+    <script type="application/javascript">
+		window.addEventListener('load', function () {
+			FastClick.attach(document.body);
+		}, false);
+
+    </script>
+</head>
+
+<body>
+<div class="container container_box">
+    <form id="frmVerify">
+
+        <div class="form-group">
+            <label for="name" class="control-label">真实姓名</label>
+            <input type="text"  id="name" name="name" class="form-control" placeholder="请输入姓名" maxlength="5" />
+        </div>
+
+        <div class="form-group">
+            <label for="idCard" class="control-label">身份证</label>
+            <input type="text"  id="idCard" name="idCard" class="form-control" placeholder="请输入身份证号" maxlength="18" />
+        </div>
+
+        <div class="form-group" style="display:none">
+            <label>开户银行</label>
+            <select  class="form-control" id="bankListSelect">
+            </select>
+        </div>
+
+        <div class="form-group" style="display:none" id="bankFullNameDiv">
+             <label for="bankFullName" class="control-label">开户银行</label>
+            <input type="text" class="form-control"  id="bankFullName" placeholder=""/>
+        </div>
+
+
+        <div class="form-group">
+            <label for="bankCard" class="control-label">银行卡号 <i class="yellow" id="yellow_msg">绑定之后不可修改</i> </label>
+            <input type="text" class="form-control"  id="bankCard" name="bankCard" placeholder="请输入银行卡号码" maxlength="19" />
+            <em id="bankCardMessage" style="display:none;"></em>
+        </div>
+
+
+        <input type="button" class="btn btn-primary form-control" value="提交" id="verifyButton"/>
+    </form>
+
+    <div class="prompt">
+        <h4>温馨提示：</h4>
+        <p>请使用本人<span style="color:#e76a00">真实姓名、身份证、银行卡</span>，三者不一致将会造成支付失败</p>
+    </div>
+
+</div>
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="js/verify.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

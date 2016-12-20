@@ -1,0 +1,94 @@
+	document.write("<script language='javascript' src='/assets/js/util/common.js'></script>");
+	document.write("<script language='javascript' src='/assets/js/util/md5.js'></script>");
+	
+	//加载完毕
+	$(function(){
+		//获取我的账户
+	    getMyAccount();
+	    
+	    $('#applyButton').click(function() {
+	    	
+	    	if(Validate._apply('amount','usebalance')){
+	    		if(($('#have_pay_pwd').val()=="true" && Validate._pwd('payPwd')) || Validate._setpwd('payPwd')){
+		    		var signature=CryptoJS.MD5(getMobile() + " " + getpwd() + " " + CryptoJS.MD5($('#payPwd').val()).toString()).toString();
+		    		var payPwd = CryptoJS.MD5($('#payPwd').val()).toString();
+		    		$.post('/walletapply',$.extend(getRequestData(),{amount:$('#amount').val(),signature:signature,payPwd:payPwd,cjResultId:$('#jxjListSelect').val(),client:1}),function(data){
+		    			if (0 == data.error_code) {
+		    				localStorage.toast=2;
+		    				window.location.href=urlJson.base + "/index.html";
+		    			} else {
+		    				Sys.showToast(remoteMessage(data.error_code));
+		    			}
+		    		},'json').error(function(){
+		    			requestError();
+		    		});
+		    	}
+	    	}
+	    	//$('#frmApple').submit();
+    	});
+
+        //全部
+    	$('#allButton').click(function() {
+        	  $('#amount').val($('#usebalance').val());
+        });
+
+        //充值
+        $('#toRecharge').click(function() {
+        	if (refresh()) {
+    			window.location.href = urlJson.base + $(this).data("hidden").replace("file:///android_asset", "");
+    		} else {
+    			window.location.href = urlJson.base + "/login.html";
+    		}
+         });
+	
+	    //获取我的抽奖加息劵
+	    //Callback.getMyCjJxjResult();
+	
+	});
+
+
+	//获取我的抽奖加息劵
+	function getMyCjJxjResult(data){
+	   var obj = jQuery.parseJSON(data);
+	   var myData = "<option value=''>不使用加息劵</option>";//拼html
+	    //遍历 json
+	    $.each(obj, function(index, item){
+	       myData +="<option value='"+item.id+"'>"+item.desp+item.stamp_end.substring(5,10)+"到期</option>";
+	    });
+	   $('#jxjListSelect').html(myData);
+	}
+	
+	//获取我的账户
+	function getMyAccount(){
+		$.ajax({  
+	        type:'GET',  
+	        url:'/getmyaccount',  
+	        data:getRequestData(),  
+	        dataType:'json',  
+	        cache : false,
+	        async : false,  //异步执行为false
+	        success:function(data){  
+	           var obj = jQuery.parseJSON(data.detail);
+		
+			   $('#amount').attr("placeholder","账户余额"+formatMoney(obj.USE_BALANCE)+"元，至少转入100")
+
+			   $('#usebalance').val(obj.USE_BALANCE);
+			   $('#have_pay_pwd').val(obj.HAVE_PAY_PWD);
+			
+			
+			   if(obj.USE_BALANCE<100){
+			     $('#message').show();
+			   }
+			
+			  //如果未设置交易密码
+			  if(!obj.HAVE_PAY_PWD){
+		     	$('#payPwd_label').text("设置(6-20位数字+字母区分大小写)交易密码");
+			    $('#payPwd').attr("placeholder","为保护您的资金安全，密码将在每次交易时使用");
+			    $('#payPwd').css("background-color","#d6ebff");
+			  }
+	        },error:function(){
+	    		requestError();
+	        }
+	    });  
+	}
+

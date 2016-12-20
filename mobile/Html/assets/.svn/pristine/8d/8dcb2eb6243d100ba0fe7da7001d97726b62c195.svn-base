@@ -1,0 +1,90 @@
+
+//获取URL参数
+function queryString(item) {
+    var url = location.href;
+	var sValue = url.match(new RegExp("[\?\&]" + item + "=([^\&]*)(\&?)", "i"))
+	return sValue ? sValue[1] : sValue
+}
+
+
+/***
+ * formatMoney(s,type) 功能：金额按千位逗号分割 参数：s，需要格式化的金额数值. 参数：type,判断格式化后的金额是否需要小数位.
+ * 返回：返回格式化后的数值字符串.
+ */
+function formatMoney(s, type) {
+	 //alert(s);
+	// alert(type);
+	if (/[^0-9\.]/.test(s))
+		return "0.00";
+	if (s == null || s == "")
+		return "0.00";
+	s = s.toString().replace(/^(\d*)$/, "$1.");
+	s = (s + "00").replace(/(\d*\.\d\d)\d*/, "$1");
+	s = s.replace(".", ",");
+	var re = /(\d)(\d{3},)/;
+	while (re.test(s))
+		s = s.replace(re, "$1,$2");
+	s = s.replace(/,(\d\d)$/, ".$1");
+	if (type == 0) {// 不带小数位(默认是有小数位)
+		var a = s.split(".");
+		if (a[1] == "00") {
+			s = a[0];
+		}
+	}
+	return s;
+}
+
+/***
+ * 还原数字
+ * @param s
+ * @return
+ */
+function rmoney(s) {
+	return parseFloat(s.replace(/[^\d\.-]/g, ""));
+} 
+/***
+ * 通用DateAdd(interval,number,date) 功能:实现javascript的日期相加功能.
+ * 参数:interval,字符串表达式，表示要添加的时间间隔. 参数:number,数值表达式，表示要添加的时间间隔的个数. 参数:date,时间对象.
+ * 返回:新的时间对象. var now = new Date(); var newDate = DateAdd("day",5,now);
+ * author:devinhua(从○开始) update:2010-5-5 20:35
+ */
+function DateAdd(interval, number, date) {
+	if (date == null)
+		return "";
+	switch (interval) {
+	case "day":
+		date = new Date(date);
+		date = date.valueOf();
+		date += number * 24 * 60 * 60 * 1000;
+		date = new Date(date);
+		return date;
+		break;
+	default:
+		return "";
+		break;
+	}
+}
+
+
+//获取当前日期的年月
+function getCurrentYearMonth(){
+    var date = new Date();
+  	var year = date.getFullYear();
+  	var	month = date.getMonth()+1;
+  	var day= date.getDate();
+  	month=month<10?"0"+month:month;
+  	//alert (month);
+  	var str = (year + "-" + month+ "-" +day);
+  	//alert (yearMonth);
+  	return str;
+}
+
+//获取2个日期间隔天数
+function getDateDiff(date1,date2){
+	var arr1=date1.split('-');
+	var arr2=date2.split('-');
+	var d1=new Date(arr1[0],arr1[1],arr1[2]);
+	var d2=new Date(arr2[0],arr2[1],arr2[2]);
+	//alert((d2.getTime()-d1.getTime())/(1000*3600*24));
+	return  (d2.getTime()-d1.getTime())/(1000*3600*24);
+}

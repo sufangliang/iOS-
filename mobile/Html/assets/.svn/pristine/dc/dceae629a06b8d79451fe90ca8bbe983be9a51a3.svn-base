@@ -1,0 +1,22 @@
+document.write("<script language='javascript' src='js/common.js'></script>");
+
+//加载完毕
+$(function() {
+
+	$('#loginButton').click(function() {
+
+		loadURL(wrapIosNativeCallback("login", $('#username').val(), $('#pwd').val()));
+	});
+
+	$('#gotoRegister').click(function() {
+
+		loadURL(wrapIosNativeCallback("gotoLocalWebPage", "register.html", "false"));
+	});
+
+	$('#gotoChangePassword').click(function() {
+
+		loadURL(wrapIosNativeCallback("gotoLocalWebPage", "setting_login_pwd.html", "false"));
+	});
+
+
+});

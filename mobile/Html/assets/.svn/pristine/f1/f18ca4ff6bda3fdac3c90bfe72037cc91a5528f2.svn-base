@@ -1,0 +1,26 @@
+var timer=5;
+
+//加载完毕
+$(function() {
+	//发送广播 刷新
+	Callback.sendBroadcastRefresh();
+	$('.return_wz>p').empty().append('<span id="timeout">5&nbsp;</span>秒后自动返回..');
+	//定时任务
+	myInterval = window.setInterval("timeout()", 1000);
+
+
+});
+
+
+function timeout() {
+	--timer;
+	if (0 == timer) {
+	    //销毁栈顶
+		Callback.destroyPage("page_recharge");
+		//清除定时任务
+		window.clearInterval(myInterval);
+	} else {
+		document.getElementById('timeout').innerHTML = timer;
+	}
+
+}

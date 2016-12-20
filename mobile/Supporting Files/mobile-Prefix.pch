@@ -1,0 +1,53 @@
+//
+//  mobile-Prefix.pch
+//  mobile
+//
+//  Created by ChenLei on 15/9/12.
+//  Copyright (c) 2015年 edaga. All rights reserved.
+//
+
+#ifndef mobile_mobile_Prefix_pch
+#define mobile_mobile_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "CocoaLumberjack.h"
+
+
+
+/********************* iOS version info *********************/
+#define IOS8_OR_LATER	( [[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending )
+
+/********************* Device info *********************/
+
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size)) : NO)
+
+#define iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(1125, 2001), [[UIScreen mainScreen] currentMode].size) || CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size)) : NO)
+
+/********************* Frame *********************/
+#define kAppFrameHeight  [[UIScreen mainScreen] applicationFrame].size.height
+#define kAppFrameWidth   [[UIScreen mainScreen] applicationFrame].size.width
+
+#define kScreenHeight    [[UIScreen mainScreen] bounds].size.height
+#define kScreenWidth     [[UIScreen mainScreen] bounds].size.width
+
+#define kOnePixel      (1.0f / [[UIScreen mainScreen] scale])     // 一像素
+
+/********************* Color *********************/
+
+
+
+/********************* Other *********************/
+
+
+#ifdef DEBUG
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+static const DDLogLevel ddLogLevel = DDLogLevelWarning;
+#endif
+
+
+#endif

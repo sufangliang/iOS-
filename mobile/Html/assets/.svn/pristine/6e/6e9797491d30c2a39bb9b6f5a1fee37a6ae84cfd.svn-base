@@ -1,0 +1,91 @@
+//加载完成
+$(function(){
+   //转入流水
+   Callback.getMyTradeLog("apply");
+   //赎回流水
+   Callback.getMyTradeLog(11);
+   //充值流水
+   Callback.getMyTradeLog(1);
+   //提现流水
+   Callback.getMyTradeLog(2);
+
+});
+
+
+
+
+//转入流水
+function getMyTradeLogApply(data){
+   var myData = "";
+   if(data==null || data==''||data=='[]'){
+       myData='<tr><td colspan="4" style="text-align:center; font-size:18px; color:#999; padding-top:40%; width:100%; ">暂无记录</td></tr>';
+    }else{
+        var obj = jQuery.parseJSON(data);
+        $.each(obj, function(index, item){
+            myData += "<tr>";
+            myData += "<td>"+item.TRANSACTION_TIME.substring(0,10)+"</td>";
+            myData += "<td>"+formatMoney(item.TRANSACTION_AMOUNT, 1)+"</td>";
+            myData += "<td>"+formatMoney(item.CURRENT_AMOUNT, 1)+"</td>";
+            myData += "<td>"+(item.NOTE==undefined?"":item.NOTE)+"</td>";
+            myData +="</tr>";
+        });
+     }
+   $('#applyList').html(myData);
+}
+
+//赎回流水
+function getMyTradeLogRedeem(data){
+     var myData = "";
+     if(data==null || data==''||data=='[]'){
+            myData='<tr><td colspan="4" style="text-align:center; font-size:18px; color:#999; padding-top:40%; width:100%; ">暂无记录</td></tr>';
+      }else{
+        var obj = jQuery.parseJSON(data);
+        $.each(obj, function(index, item){
+            myData += "<tr>";
+            myData += "<td>"+item.TRANSACTION_TIME.substring(0,10)+"</td>";
+            myData += "<td>"+formatMoney(item.TRANSACTION_AMOUNT, 1)+"</td>";
+            myData += "<td>"+formatMoney(item.CURRENT_AMOUNT, 1)+"</td>";
+            myData += "<td>"+(item.NOTE==undefined?"":item.NOTE)+"</td>";
+            myData +="</tr>";
+        });
+    }
+   $('#redeemList').html(myData);
+}
+
+//充值流水
+function getMyTradeLogRecharge(data){
+  var myData = "";
+  if(data==null || data==''||data=='[]'){
+        myData='<tr><td colspan="4" style="text-align:center; font-size:18px; color:#999; padding-top:40%; width:100%; ">暂无记录</td></tr>';
+   }else{
+        var obj = jQuery.parseJSON(data);
+        $.each(obj, function(index, item){
+            myData += "<tr>";
+            myData += "<td>"+item.TRANSACTION_TIME.substring(0,10)+"</td>";
+            myData += "<td>"+formatMoney(item.TRANSACTION_AMOUNT, 1)+"</td>";
+            myData += "<td>"+formatMoney(item.CURRENT_AMOUNT, 1)+"</td>";
+            myData += "<td>"+(item.NOTE==undefined?"":item.NOTE)+"</td>";
+            myData +="</tr>";
+        });
+    }
+   $('#rechargeList').html(myData);
+}
+
+//提现流水
+function getMyTradeLogWithdraw(data){
+   var myData = "";
+   if(data==null || data==''||data=='[]'){
+          myData='<tr><td colspan="4" style="text-align:center; font-size:18px; color:#999; padding-top:40%; width:100%; ">暂无记录</td></tr>';
+    }else{
+       var obj = jQuery.parseJSON(data);
+        $.each(obj, function(index, item){
+            myData += "<tr>";
+            myData += "<td>"+item.TRANSACTION_TIME.substring(0,10)+"</td>";
+            myData += "<td>"+formatMoney(item.TRANSACTION_AMOUNT, 1)+"</td>";
+            myData += "<td>"+formatMoney(item.CURRENT_AMOUNT, 1)+"</td>";
+            myData += "<td>"+(item.NOTE==undefined?"":item.NOTE)+"</td>";
+            myData +="</tr>";
+        });
+    }
+   $('#withdrawList').html(myData);
+}

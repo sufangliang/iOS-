@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+		<title>新手指引</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
+		<style>
+			.col-nopadding {
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<section id="aqbz">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-nopadding">
+						<div id="item1">
+							<img src="img/service/xszy1.jpg" class="img-responsive" alt="Responsive image">
+						</div>
+					</div>
+					<div class="col-xs-12 col-nopadding">
+						<div id="item2">
+							<img src="img/service/xszy2.jpg" class="img-responsive" alt="Responsive image">
+						</div>
+					</div>
+					<div class="col-xs-12 col-nopadding">
+						<div id="item3">
+							<img src="img/service/xszy3.jpg" class="img-responsive" alt="Responsive image">
+						</div>
+					</div>
+					<div class="col-xs-12 col-nopadding">
+						<div id="item4">
+							<img src="img/service/xszy4.jpg" class="img-responsive" alt="Responsive image">
+						</div>
+					</div>
+					<div class="col-xs-12 col-nopadding">
+						<div id="item5">
+							<img src="img/service/xszy5.jpg" class="img-responsive" alt="Responsive image">
+						</div>
+					</div>
+					<div class="col-xs-12 col-nopadding">
+						<div id="item6">
+							<img src="img/service/xszy6.jpg" class="img-responsive" alt="Responsive image">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+
+</html>

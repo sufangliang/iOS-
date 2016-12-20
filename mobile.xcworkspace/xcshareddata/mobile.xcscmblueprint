@@ -1,0 +1,35 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9919173b-219c-f942-acf4-e2d592fee6f3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "95f21ee0-38be-0847-886b-3b0ad6028c54++4556" : {
+
+    },
+    "9919173b-219c-f942-acf4-e2d592fee6f3" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "95f21ee0-38be-0847-886b-3b0ad6028c54++4556" : 9223372036854775807,
+    "9919173b-219c-f942-acf4-e2d592fee6f3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "461E885E-FD9C-47BA-B5EC-15CB71FBBD89",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "95f21ee0-38be-0847-886b-3b0ad6028c54++4556" : "iOSApp\/trunk\/project\/mobile\/Html\/assets\/",
+    "9919173b-219c-f942-acf4-e2d592fee6f3" : "iOSApp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "mobile",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/project\/mobile.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/183.57.42.178:32178\/svn\/AndroidApp",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "95f21ee0-38be-0847-886b-3b0ad6028c54++4556"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/183.57.42.178:32178\/svn\/iOSApp",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9919173b-219c-f942-acf4-e2d592fee6f3"
+    }
+  ]
+}

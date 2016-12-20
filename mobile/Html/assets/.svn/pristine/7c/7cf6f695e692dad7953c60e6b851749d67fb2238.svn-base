@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>益女神</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="js/fastclick.js"></script>
+    <script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+  </script>
+</head>
+<body class="bg-gray">
+
+<!--本期益女神-->
+<div class="bg_purpleimg wallet_pp" id="goddessfour" data-hidden="http://eqxiu.com/s/4ifHwWA0">
+    <div class="wallet_pp_left">
+        <div class="img"><img src="img/goddess/goddess-img04.jpg"></div>
+        <p>本期益女神</p>
+
+        <div class="yanvalue">颜值<i class="heart"></i><i class="heart"></i><i class="heart"></i><i
+                class="heart"></i><i class="heart"></i></div>
+    </div>
+    <div class="wallet_pp_right">
+       <p>姓名：LULU</p>
+		<p>职位：出纳</p>
+		<p class="explain">与生俱来的逗比光环
+			<br> 并在逗比女神的道路上
+			<br> 无往不利的继续前行~
+			<br> --!逗比也是一种气质
+		</p>
+
+    </div>
+</div>
+<!--本期益女神-->
+<div class="wallet_pp_b">
+    <h5>往期女神</h5>
+
+	 <!--最新往期女神-->
+
+    <div class="wallet_pp_past" id="goddessthree" data-hidden="http://eqxiu.com/s/n6UcpYV8">
+        <div class="wallet_pp_past_l">
+            <div class="img"><img src="img/goddess/goddess-img03.jpg"></div>
+            <p class="pt5">女神颜值</p>
+
+            <p class="yanvalue"><i class="heart"></i><i class="heart"></i><i
+                    class="heart"></i><i class="heart"></i><i class="heart"></i></p>
+        </div>
+        <div class="wallet_pp_past_r">
+           <p>姓名：Eileen——第3期</p>
+
+			<p>职位：行政文员</p>
+
+            <p class="explain">
+
+            <p class="explain">人生就像一场旅行 不必在乎目的地. 在乎的,是沿途的风景 以及看风景的心情</p>
+        </div>
+    </div>
+
+    <!--最新往期女神-->
+
+    <div class="wallet_pp_past" id="goddesstwo" data-hidden="http://eqxiu.com/s/p0G7IYmV">
+        <div class="wallet_pp_past_l">
+            <div class="img"><img src="img/goddess/goddess-img02.jpg"></div>
+            <p class="pt5">女神颜值</p>
+
+            <p class="yanvalue"><i class="heart"></i><i class="heart"></i><i
+                    class="heart"></i><i class="heart"></i><i class="heart"></i></p>
+        </div>
+        <div class="wallet_pp_past_r">
+            <p>姓名：黄樱慧——第2期</p>
+
+            <p>职位：前台/文职</p>
+
+            <p class="explain">
+
+            <p class="explain">爱情不将就，理财不将就,靠男人不如靠“益钱包”,日日生息，复利计息,月月升息，梯度升级</p>
+        </div>
+    </div>
+
+    <!--最新往期女神-->
+
+    <div class="wallet_pp_past" id="goddessone" data-hidden="http://eqxiu.com/s/yTdfQgRu">
+        <div class="wallet_pp_past_l">
+            <div class="img"><img src="img/goddess/goddess-img01.jpg"></div>
+            <p class="pt5">女神颜值</p>
+
+            <p class="yanvalue"><i class="heart"></i><i class="heart"></i><i
+                    class="heart"></i><i class="heart"></i><i class="heart"></i></p>
+        </div>
+        <div class="wallet_pp_past_r">
+            <p>姓名：A-ling——第1期</p>
+
+            <p>职位：客服</p>
+
+            <p class="explain">当一名警察，是我小时候的梦想
+                女警炫酷的感觉，更加坚定了我读警校的决心
+                毕业之后在执法部门实习，才发现，
+                现实是残酷的</p>
+        </div>
+    </div>
+
+</div>
+<script src="static/js/jquery-2.0.3.min.js"  charset="utf-8"></script>
+<script src="static/js/bootstrap.min.js"  charset="utf-8"></script>
+<script src="js/goddess.js"  charset="utf-8"></script>
+</body>
+</html>

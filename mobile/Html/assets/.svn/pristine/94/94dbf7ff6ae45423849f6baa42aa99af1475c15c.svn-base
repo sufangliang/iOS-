@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>理财</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="js/fastclick.js"></script>
+    <style type="text/css">
+       * { -webkit-user-select : none; }
+    </style>
+    <script type="application/javascript">
+        window.addEventListener('load', function () {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+    </head>
+
+<body class="bg-gray">
+<div class="container">
+
+  <div class="row">
+     <!-- 轮播广告 -->
+     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+              <div class="item active"><img src="img/banner/banner1.jpg"></div>
+              <div class="item"><img src="img/banner/banner2.jpg"></div>
+              <div class="item"><img src="img/banner/banner3.jpg"></div>
+        </div>
+     </div>
+     <!-- 轮播广告 end--> 
+  </div>
+  
+  <div class="row">
+      <!--益钱包开始-->
+        <div class="index_list"  >
+          <div class="index_list_title">益钱包</div>
+
+          <div class="index_list_c" data-hidden="file:///android_asset/about_wallet.html" data-login="false" id="touch_1">
+             <div class="index_hotspot index_hotspot01"></div>
+             <div class="index_list_p">
+
+              <p>
+               <em>9-11<i>%</i></em>
+               <span>年化收益率</span>
+              </p>
+
+              <p>
+               <em>7天</em>
+               <span>锁定期</span>
+              </p>
+
+              <p>
+               <em id="min_num">￥100</em>
+               <span>起投金额</span>
+              </p>
+
+             </div>
+          </div>
+        </div>
+      <!--益钱包结束-->
+
+     <!--益定宝开始-->
+      <div class="index_list">
+          <div class="index_list_title">益定宝</div>
+
+          <div class="index_list_c" data-hidden="file:///android_asset/about_ydb.html?type=1" data-login="false" id="touch_2">
+              <div class="index_hotspot index_hotspot02"></div>
+              <div class="index_list_p">
+
+                  <p>
+                      <em>11<i>%</i></em>
+                      <span>年化收益率</span>
+                  </p>
+
+                  <p>
+                      <em>1个月</em>
+                      <span>锁定期</span>
+                  </p>
+
+                  <p>
+                      <em>￥500</em>
+                      <span>起投金额</span>
+                  </p>
+
+              </div>
+          </div>
+
+
+          <div class="index_list_c" data-hidden="file:///android_asset/about_ydb.html?type=3" data-login="false" id="touch_3">
+              <div class="index_hotspot index_hotspot02"></div>
+              <div class="index_list_p">
+
+                  <p>
+                      <em>12<i>%</i></em>
+                      <span>年化收益率</span>
+                  </p>
+
+                  <p>
+                      <em>3个月</em>
+                      <span>锁定期</span>
+                  </p>
+
+                  <p>
+                      <em>￥500</em>
+                      <span>起投金额</span>
+                  </p>
+
+              </div>
+          </div>
+
+          <!-- <div class="index_list_c" data-hidden="file:///android_asset/about_ydb.html?type=1" data-login="false" data-login="false" style="display:none">
+               <div class="index_hotspot index_hotspot03"></div>
+               <div class="index_list_p">
+
+                   <p>
+                       <em>11<i>%</i></em>
+                       <span>年化收益率</span>
+                   </p>
+
+                   <p>
+                       <em>1个月</em>
+                       <span>锁定期</span>
+                   </p>
+
+                   <p>
+                       <em>￥500</em>
+                       <span>起投金额</span>
+                   </p>
+
+               </div>
+           </div>-->
+
+
+       </div>
+       <!--益定宝结束-->
+    
+  </div>
+  
+  
+  
+</div>
+<script src="static/js/jquery-2.0.3.min.js" charset="utf-8"></script> 
+<script src="static/js/bootstrap.min.js" charset="utf-8"></script> 
+<script src="static/js/hammer.js" charset="utf-8"></script> 
+<script src="static/js/jquery.hammer.js" charset="utf-8"></script>
+<script src="js/index.js" charset="utf-8"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+//加载完毕
+$(function(){
+
+	$('#loginButton').click(function() {
+	   Callback.doLogin($('#username').val(), $('#pwd').val());
+	});
+
+	$('#gotoRegister').click(function() {
+    	 Callback.gotoWebViewPage("file:///android_asset/register.html", "false");
+    });
+
+    $('#gotoChangePassword').click(function() {
+        	 Callback.gotoWebViewPage("file:///android_asset/setting_login_pwd.html", "false");
+        });
+
+
+});

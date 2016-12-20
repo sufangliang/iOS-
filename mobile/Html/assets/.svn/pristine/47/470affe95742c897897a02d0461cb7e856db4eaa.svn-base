@@ -1,0 +1,108 @@
+//加载完毕
+$(function() {
+
+  //获取我的账户
+
+  loadURL(wrapIosNativeCallback("getMyAccount"));
+
+  //获取我的抽奖加息劵
+  //Callback.getMyCjJxjResult();
+
+  $('#applyButton').click(function() {
+
+    loadURL(wrapIosNativeCallback("walletApply", $('#amount').val(), $('#payPwd').val(), $('#usebalance').val(), $('#have_pay_pwd').val(), $('#jxjListSelect').val()));
+  });
+
+  //全部
+  $('#allButton').click(function() {
+    $('#amount').val($('#usebalance').val());
+  });
+
+  //充值
+  $('#toRecharge').click(function() {
+
+    loadURL(wrapIosNativeCallback("gotoLocalWebPage", $(this).data("hidden"), $(this).data("login")));
+  });
+  
+  //取消
+  $('#doCancel').click(function() {
+                       $('#bombbox1').hide();
+                       $('#bombbox2').hide();
+                       });
+  
+  //取消
+  $('#bombbox1').click(function() {
+                       $('#bombbox1').hide();
+                       $('#bombbox2').hide();
+                       });
+  
+  
+  //去充值
+  $('#gotoRecharge').click(function() {
+                           //跳转到相关页面  url  是否需要登录
+                            loadURL(wrapIosNativeCallback("gotoLocalWebPage", $(this).data("hidden"), $(this).data("login")));
+                           });
+
+
+});
+
+
+
+//获取我的抽奖加息劵
+function getMyCjJxjResult(data) {
+  var obj = jQuery.parseJSON(data);
+  var myData = "<option value=''>不使用加息劵</option>"; //拼html
+  //遍历 json
+  $.each(obj, function(index, item) {
+    myData += "<option value='" + item.id + "'>" + item.desp + item.stamp_end.substring(5, 10) + "到期</option>";
+  });
+  $('#jxjListSelect').html(myData);
+}
+
+//获取我的账户
+function getMyAccount(data) {
+
+  var obj = jQuery.parseJSON(data);
+
+  $('#amount').attr("placeholder", "账户余额" + formatMoney(obj.USE_BALANCE) + "元，至少转入100")
+
+  $('#usebalance').val(obj.USE_BALANCE);
+  $('#have_pay_pwd').val(obj.HAVE_PAY_PWD);
+
+
+  if (obj.USE_BALANCE < 100) {
+    $('#message').css('visibility', 'visible');
+    //$('#message').show();
+  }
+
+  //如果未设置交易密码
+  if (!obj.HAVE_PAY_PWD) {
+    $('#payPwd_label').text("设置交易密码");
+    $('#payPwd').attr("placeholder", "为保护您的资金安全，密码将在每次交易时使用");
+    $('#payPwd').css("background-color", "#d6ebff");
+  }
+}
+
+
+//显示提示框
+function showHideBox(){
+    $('#bombbox1').show();
+    $('#bombbox2').show();
+}
+
+// 判断是否登录状态
+function refresh(){
+    Callback.refresh();
+}
+
+//已登录
+function refreshLoginOk(){
+    //alert(111111);
+    //获取我的账户
+    Callback.getMyAccount();
+}
+
+//未登录
+function refreshNotLogin(){
+    
+}

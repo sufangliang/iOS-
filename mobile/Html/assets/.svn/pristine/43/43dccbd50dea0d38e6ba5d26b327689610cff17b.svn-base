@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>充值</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+</script>
+</head>
+<body>
+<div class="container-fluid container_box">
+    <form class="form" id="recharge" role="form" action="" method="post">
+
+        <!--是否绑定过身份证-->
+        <input type="hidden"  id="have_id_card" value="false"  />
+        <!--是否绑定过银行卡-->
+        <input type="hidden"  id="have_bank_card" value="false" />
+
+        <div class="form-group">
+            <label  class="control-label">真实姓名   <i><a href="javascript:void(0)" id="edit_verify">编辑实名认证</a></i>  </label>
+            <input type="text" class="form-control" value="" id="name" placeholder="请输入姓名" maxlength="12"  />
+        </div>
+
+
+        <div class="form-group">
+            <label  class="control-label">身份证</label>
+            <input type="text" class="form-control" value="" id="idCard"  placeholder="请输入身份证号" maxlength="18" />
+        </div>
+
+
+        <div class="form-group" style="display:none;" id="bankFullNameDiv" >
+            <label  class="control-label">开户银行</label>
+            <input type="text" class="form-control" value="" id="bankFullName" disabled />
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="bankCard" class="control-label">银行卡号 <i class="yellow" id="yellow_msg">绑定之后不可修改</i>  </label>
+            <input type="number" class="form-control" value=""  id="bankCard" placeholder="请输入银行卡号码" maxlength="19"  />
+            <em id="bankCardMessage" style="display:none;"></em>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <label for="money_order" class="control-label">充值金额</label>
+            <input type="number" class="form-control" name="money_order" id="money_order" placeholder="充值金额" maxlength="20"/>
+        </div>
+
+
+        <input type="button" class="btn btn-primary form-control"    id="rechargeButton" value="充值" />
+
+
+    </form>
+
+    <div class="prompt">
+        <p>温馨提示：部分发卡行默认每日支付上限为5000元</p>
+    </div>
+
+    <!--连连支付表单-->
+    <form id="charge" action="https://yintong.com.cn/llpayh5/authpay.htm" method="post" hidden>
+        <input type="text" id="req_data" name="req_data"/>
+    </form>
+    <!--连连支付表单-->
+
+</div>
+
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="js/formatutil.js"  charset="utf-8"></script>
+<script src="js/recharge.js" charset="utf-8"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>充值</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+</script>
+</head>
+<body>
+<div class="container-fluid container_box">
+   <form action="https://gw.baofoo.com/wapmobile" id="frmRecharge" method="post">
+
+        <div class="form-group">
+            <label for="money_order" class="control-label">充值金额</label>
+            <input type="number" class="form-control" id="money" placeholder="充值金额" maxlength="20"/>
+        </div>
+
+		<input name='PayID' type='hidden' value="all"/>
+		<input name='OrderMoney' type='hidden' id='OrderMoney'/>
+		<input name='MemberID' type='hidden' id='MemberID'/>
+		<input name='TerminalID' type='hidden' id='TerminalID'/>
+		<input name='InterfaceVersion' type='hidden' id='InterfaceVersion'/>
+		<input name='KeyType' type='hidden' id='KeyType'/>
+		<input name='TransID' type='hidden' id='TransID'/>		
+		<input name='TradeDate' type='hidden' id='TradeDate' />
+		<input name='PageUrl' type='hidden' id='PageUrl'/>
+		<input name='ReturnUrl' type='hidden' id='ReturnUrl'/>	
+		<input name='Signature' type='hidden' id='Signature'/>
+		<input name='NoticeType' type='hidden' id='NoticeType'/>
+		
+		<input name='ProductName' type='hidden' id='ProductName'/>
+		<input name='Amount' type='hidden' id='Amount'/>	
+		<input name='UserName' type='hidden' id='UserName'/>
+		<input name='AdditionalInfo' type='hidden' id='AdditionalInfo'/>
+		
+        <input type="button" class="btn btn-primary form-control"    id="rechargeButton" value="充值" />
+
+
+    </form>
+</div>
+
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="js/recharge_bf.js" charset="utf-8"></script>
+
+</body>
+
+</html>

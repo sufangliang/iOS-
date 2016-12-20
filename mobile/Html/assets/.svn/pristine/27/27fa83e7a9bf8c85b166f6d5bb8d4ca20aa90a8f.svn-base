@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>4重保障免除后顾之忧</title>
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+	<script type="application/javascript" src="js/fastclick.js"></script>
+	<script type="application/javascript">
+		window.addEventListener('load', function () {
+			FastClick.attach(document.body);
+		}, false);
+   </script>
+</head>
+
+<body>
+<div class="appsecurity">
+
+<div class="appsecurity_bg appsecurity_bg1">
+  <h4>银行全程资金监管</h4>
+  <img src="img/security/appsecurity_img01.png">
+  <p>依托银行系统实现资金动态全程跟踪<br>
+保证风险隔离，实现资金专款专用</p> 
+</div>
+
+
+<div class="appsecurity_bg appsecurity_bg2">
+  <h4>资金安全由阳光保险100%承保</h4>
+  <img src="img/security/appsecurity_img02.png">
+  <p>用户的每一笔交易从投资到还款各个环节<br>
+由阳光保险承担账户资金安全责任</p> 
+</div>
+
+<div class="appsecurity_bg appsecurity_bg3">
+  <h4>7年运作经验无一笔坏账</h4>
+  <img src="img/security/appsecurity_img03.png">
+  <p>资深“运作”团队甄选优质供应链企业<br>
+从征信、资金、还款都进行全方面监管</p> 
+</div>	
+
+<div class="appsecurity_bg appsecurity_bg4">
+  <h4>大成律师事务所确保各合同合法性</h4>
+  <img src="img/security/appsecurity_img04.png">
+  <p>由大成律师事务所提供专业法务支持<br>
+确保平台各合同符合法律规定</p> 
+</div>			
+		
+</div>	
+</body>
+</html>

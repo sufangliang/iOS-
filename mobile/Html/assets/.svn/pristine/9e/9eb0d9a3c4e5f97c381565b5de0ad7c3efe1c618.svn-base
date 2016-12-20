@@ -1,0 +1,232 @@
+var page_type = queryString("page_type");;
+var highlight_Page = queryString("highlight_page");
+var currentPageCount1 = 0;
+var currentPageCount2 = 0;
+var currentPageCount3 = 0;
+var currentPageCount4 = 0;
+var pageCount = 20;
+
+//加载完成
+$(function() {
+  currentPageCount1 = 0;
+  currentPageCount2 = 0;
+  currentPageCount3 = 0;
+  currentPageCount4 = 0;
+  
+  //转入流水
+  loadURL(wrapIosNativeCallback("getMyTradeLog", "apply", 1, pageCount));
+  //赎回流水
+  loadURL(wrapIosNativeCallback("getMyTradeLog", "11", 1, pageCount));
+  //充值流水
+  loadURL(wrapIosNativeCallback("getMyTradeLog", "1", 1, pageCount));
+  //提现流水
+  loadURL(wrapIosNativeCallback("getMyTradeLog", "2", 1, pageCount));
+  
+  setCurrentPage(page_type);
+});
+
+function setCurrentPage(page) {
+    jsLog("tradelog:setCurrentPage page = " + page);
+    page_type = page;
+    
+    if(page_type == "apply") {
+        $("ul li a:eq(0)").click();
+    } else if(page_type == "11") {
+        $("ul li a:eq(1)").click();
+    } else if(page_type == "1") {
+        $("ul li a:eq(2)").click();
+    } else if(page_type == "2") {
+        $("ul li a:eq(3)").click();
+    }
+}
+
+//转入流水
+function getMyTradeLogApply(data) {
+    jsLog("getMyTradeLogApply data = " + data);
+    
+    loadURL(wrapIosNativeCallback("finishLoadMore"));
+    
+  var myData = "";
+  if (data == null || data == '' || data == '[]') {
+      if(currentPageCount1 ==0) {
+          myData = '<tr><td colspan="4" style="text-align:center; font-size:18px; color:#999; padding-top:40%; width:100%; background-color: #f0f0f0; ">暂无记录</td></tr>';
+      } else {
+          loadURL(wrapIosNativeCallback("tips", "亲~没有更多记录了"));
+      }
+     
+  } else {
+    var obj = jQuery.parseJSON(data);
+    $.each(obj, function(index, item) {
+      myData += "<tr>";
+      myData += "<td>" + item.TRANSACTION_TIME.substring(0, 10) + "</td>";
+      myData += "<td>" + formatMoney(item.TRANSACTION_AMOUNT, 1) + "</td>";
+      myData += "<td>" + formatMoney(item.CURRENT_AMOUNT, 1) + "</td>";
+      myData += "<td>" + (item.NOTE == undefined ? "" : item.NOTE) + "</td>";
+      myData += "</tr>";
+    });
+  }
+    
+    if(currentPageCount1==0) {
+        $('#applyList').html(myData);
+    } else {
+        $('#applyList').append(myData);
+    }
+
+    
+    if(highlight_Page == "apply") {
+        //   $("ul li a:eq(3)").click();
+        $("ul li :eq(0)").css("background-color","#fff");
+        $("#applyList").find("tr:eq(0)").css("background-color","#d6ebff");
+    }
+
+}
+
+//赎回流水
+function getMyTradeLogRedeem(data) {
+    jsLog("getMyTradeLogRedeem data = " + data);
+    
+    loadURL(wrapIosNativeCallback("finishLoadMore"));
+    
+  var myData = "";
+  if (data == null || data == '' || data == '[]') {
+      if(currentPageCount2 == 0) {
+           myData = '<tr><td colspan="4" style="text-align:center; font-size:18px; color:#999; padding-top:40%; width:100%; ">暂无记录</td></tr>';
+      } else {
+         loadURL(wrapIosNativeCallback("tips", "亲~没有更多记录了"));
+      }
+      
+  } else {
+    var obj = jQuery.parseJSON(data);
+    $.each(obj, function(index, item) {
+      myData += "<tr>";
+      myData += "<td>" + item.TRANSACTION_TIME.substring(0, 10) + "</td>";
+      myData += "<td>" + formatMoney(item.TRANSACTION_AMOUNT, 1) + "</td>";
+      myData += "<td>" + formatMoney(item.CURRENT_AMOUNT, 1) + "</td>";
+      myData += "<td>" + (item.NOTE == undefined ? "" : item.NOTE) + "</td>";
+      myData += "</tr>";
+    });
+  }
+    if(currentPageCount2==0) {
+        $('#redeemList').html(myData);
+    } else {
+        $('#redeemList').append(myData);
+    }
+    
+    if(highlight_Page == "11") {
+        //   $("ul li a:eq(3)").click();
+        $("ul li :eq(0)").css("background-color","#fff");
+        $("#redeemList").find("tr:eq(0)").css("background-color","#d6ebff");
+    }
+    
+}
+
+//充值流水
+function getMyTradeLogRecharge(data) {
+    jsLog("getMyTradeLogRecharge data = " + data);
+    
+    loadURL(wrapIosNativeCallback("finishLoadMore"));
+    
+  var myData = "";
+  if (data == null || data == '' || data == '[]') {
+      if(currentPageCount3 == 0) {
+          myData = '<tr><td colspan="4" style="text-align:center; font-size:18px; color:#999; padding-top:40%; width:100%; ">暂无记录</td></tr>';
+      } else {
+          loadURL(wrapIosNativeCallback("tips", "亲~没有更多记录了"));
+      }
+    
+  } else {
+    var obj = jQuery.parseJSON(data);
+    $.each(obj, function(index, item) {
+      myData += "<tr>";
+      myData += "<td>" + item.TRANSACTION_TIME.substring(0, 10) + "</td>";
+      myData += "<td>" + formatMoney(item.TRANSACTION_AMOUNT, 1) + "</td>";
+      myData += "<td>" + formatMoney(item.CURRENT_AMOUNT, 1) + "</td>";
+      myData += "<td>" + (item.NOTE == undefined ? "" : item.NOTE) + "</td>";
+      myData += "</tr>";
+    });
+  }
+
+    if(currentPageCount3==0) {
+        $('#rechargeList').html(myData);
+    } else {
+        $('#rechargeList').append(myData);
+    }
+    
+    
+    
+    if(highlight_Page == "1") {
+        //   $("ul li a:eq(3)").click();
+        $("ul li :eq(0)").css("background-color","#fff");
+        $("#rechargeList").find("tr:eq(0)").css("background-color","#d6ebff");
+    }
+    
+}
+
+//提现流水
+function getMyTradeLogWithdraw(data) {
+    jsLog("getMyTradeLogWithdraw data = " + data);
+    
+    loadURL(wrapIosNativeCallback("finishLoadMore"));
+    
+  var myData = "";
+  if (data == null || data == '' || data == '[]') {
+      if(currentPageCount4 == 0) {
+          myData = '<tr><td colspan="4" style="text-align:center; font-size:18px; color:#999; padding-top:40%; width:100%; ">暂无记录</td></tr>';
+      } else {
+          loadURL(wrapIosNativeCallback("tips", "亲~没有更多记录了"));
+      }
+      
+  } else {
+    var obj = jQuery.parseJSON(data);
+    $.each(obj, function(index, item) {
+      myData += "<tr>";
+      myData += "<td>" + item.TRANSACTION_TIME.substring(0, 10) + "</td>";
+      myData += "<td>" + formatMoney(item.TRANSACTION_AMOUNT, 1) + "</td>";
+      myData += "<td>" + formatMoney(item.CURRENT_AMOUNT, 1) + "</td>";
+      myData += "<td>" + (item.NOTE == undefined ? "" : item.NOTE) + "</td>";
+      myData += "</tr>";
+    });
+  }
+
+    if(currentPageCount4==0) {
+        $('#withdrawList').html(myData);
+    } else {
+        $('#withdrawList').append(myData);
+    }
+
+    
+    if(highlight_Page == "2") {
+     //   $("ul li a:eq(3)").click();
+        $("ul li :eq(0)").css("background-color","#fff");
+        $("#withdrawList").find("tr:eq(0)").css("background-color","#d6ebff");
+    }
+}
+
+//加载更多
+function loadMore(){
+    jsLog("loadMore");
+    
+//    loadURL(wrapIosNativeCallback("finishLoadMore"));
+    if($("ul li:eq(0)").hasClass("active")){
+        //下拉次数加一次
+        currentPageCount1++;
+        //转入流水
+        loadURL(wrapIosNativeCallback("getMyTradeLog", "apply", 1+currentPageCount1, pageCount));
+    }else if($("ul li:eq(1)").hasClass("active")){
+        //下拉次数加一次
+        currentPageCount2++;
+        //赎回流水
+        loadURL(wrapIosNativeCallback("getMyTradeLog", 11, 1+currentPageCount2, pageCount));
+    }else if($("ul li:eq(2)").hasClass("active")){
+        //下拉次数加一次
+        currentPageCount3++;
+        //充值流水
+        loadURL(wrapIosNativeCallback("getMyTradeLog", 1, 1+currentPageCount3, pageCount));
+    }else if($("ul li:eq(3)").hasClass("active")){
+        //下拉次数加一次
+        currentPageCount4++;
+        //提现流水
+        loadURL(wrapIosNativeCallback("getMyTradeLog", "2", 1+currentPageCount4, pageCount));
+    }
+}
+

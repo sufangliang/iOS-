@@ -1,0 +1,101 @@
+	document.write("<script language='javascript' src='/assets/js/util/common.js'></script>");
+//加载完毕
+$(function(){
+	var toast=localStorage.toast;
+	if(toast!=null){
+		localStorage.toast=null;
+		switch (toast) {
+		case "0":
+			Sys.showToast("充值成功");
+			break;
+		/*case "1":
+			Sys.showToast("提现申请成功");--已变成跳到资金流水页
+			break;*/
+		case "2":
+			Sys.showToast("转入成功");
+			break;
+		case "3":
+			Sys.showToast("赎回成功");
+			break;
+		case "4":
+			//修改支付.登陆密码.实名认证成功
+			Sys.showToast("设置成功");
+			break;
+		default:
+		    break; 
+		}
+	}
+	
+	$('.container').css('margin-bottom','49px');
+	$('body').append('<div class="footer">'+
+				  '<div class="footer_nav_list">'+
+				    '<span class="footer_nav">'+
+				    '<a href="index.html" class="nav_index nav_index_current"><i></i><em>理财</em></a>'+
+				    '</span>'+
+				    '<span class="footer_nav">'+
+				    '<a href="assets.html" id="nav_assets" class="nav_assets"><i></i><em>资产</em></a>'+
+				    '</span>'+
+				    '<span class="footer_nav">'+
+				    '<a href="me.html" class="nav_me"><i></i><em>我</em></a>'+
+				    '</span>'+
+				  '</div>'+
+				'</div>');
+				
+    $(".index_list_c").click(function() {
+         window.location.href = $(this).data("hidden").replace("file:///android_asset/","");
+    });
+
+    //banner手势滑动
+    $('#carousel-example-generic').hammer().on('swipeleft', function(){
+      $(this).carousel('next');
+     });
+
+    $('#carousel-example-generic').hammer().on('swiperight', function(){
+      $(this).carousel('prev');
+    });
+	
+	//获取益钱包详情
+    getWalletDetail();
+});
+
+	function getWalletDetail(){
+		$.getJSON('/getwalletdetail',getRequestData(),function(data) {
+			if (0 == data.error_code) {
+				var obj = jQuery.parseJSON(data.detail);
+				$('#min_num').text('￥'+obj.MIN_NUM);
+			}
+		}).error(function(){
+			requestError();
+		});
+	}
+
+document.getElementById("touch_1").addEventListener("touchstart", touchStart, false);
+document.getElementById("touch_1").addEventListener("touchmove", touchMove, false);
+document.getElementById("touch_1").addEventListener("touchend", touchEnd, false);
+document.getElementById("touch_1").addEventListener("touchcancel", touchCancel, false);
+
+document.getElementById("touch_2").addEventListener("touchstart", touchStart, false);
+document.getElementById("touch_2").addEventListener("touchmove", touchMove, false);
+document.getElementById("touch_2").addEventListener("touchend", touchEnd, false);
+document.getElementById("touch_2").addEventListener("touchcancel", touchCancel, false);
+
+document.getElementById("touch_3").addEventListener("touchstart", touchStart, false);
+document.getElementById("touch_3").addEventListener("touchmove", touchMove, false);
+document.getElementById("touch_3").addEventListener("touchend", touchEnd, false);
+document.getElementById("touch_3").addEventListener("touchcancel", touchCancel, false);
+
+function touchStart(event) {
+  this.style.background = "#e1e1e1";
+}
+
+function touchMove(event) {
+  this.style.background = "#FFF";
+}
+
+function touchEnd(event) {
+  this.style.background = "#FFF";
+}
+
+function touchCancel(event){
+  this.style.background = "#FFF";
+}

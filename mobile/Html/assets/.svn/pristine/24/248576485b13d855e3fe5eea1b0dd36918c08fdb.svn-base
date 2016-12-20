@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>交易密码</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="js/fastclick.js"></script>
+    <script type="application/javascript">
+        window.addEventListener('load', function () {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+</head>
+
+<body>
+<div class="container container_box">
+    <form id="frmSetpwd">
+
+        <!--是否设置过交易密码  默认已设置-->
+        <input type="hidden"  id="have_pay_pwd" value="true"  />
+
+        <div class="form-group">
+            <label>手机号码</label>
+            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="" disabled/>
+        </div>
+
+        <div class="form-group" id="idCardDiv">
+            <label>身份证</label>
+            <input type="text" class="form-control" id="idCard" name="idCard" placeholder="请输入身份证号" maxlength="18"/>
+        </div>
+
+
+        <div class="form-group">
+            <label for="pwd" id="pwdLabel">新密码</label>
+            <input type="password" id="pwd" name="pwd" class="form-control" placeholder="请输入新密码" maxlength="20"/>
+
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="code">手机验证码</label>
+
+            <div class="input-group">
+                <input type="number" placeholder="请输入手机验证码" class="form-control" id="code" name="code" maxlength="4"/>
+
+                <div style="padding: 0px;border:0px;" class="input-group-addon">
+                    <input type="button" class="btn btn-primary btn-yzm" value="获取手机验证码" id="sendMsgButton"/>
+                </div>
+            </div>
+        </div>
+
+        <input type="button" class="btn btn-primary btn-block form-control" value="提交" id="sureButton"/>
+
+    </form>
+</div>
+
+
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="js/setting_pay_pwd.js" charset="utf-8"></script>
+
+</body>
+
+</html>

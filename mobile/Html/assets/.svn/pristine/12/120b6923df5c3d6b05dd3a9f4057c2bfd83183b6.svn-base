@@ -1,0 +1,121 @@
+	document.write("<script language='javascript' src='/assets/js/util/common.js'></script>");
+//滚动全局变量
+var options = {
+	  useEasing : true,
+	  useGrouping : true,
+	  separator : ',',
+	  decimal : '.',
+	  prefix : '',
+	  suffix : ''
+  };
+	
+	//益钱包投资金额
+	var wallet_apply_amount=queryString("wallet_apply_amount");
+
+//加载完毕
+$(function(){
+	
+	var toast=localStorage.toast;
+	if(toast!=null){
+		localStorage.toast=null;
+		switch (toast) {
+		case "2":
+			Sys.showToast("转入成功");
+			break;
+		default:
+		    break; 
+		}
+	}
+	
+     //获取会员益钱包收益详情
+     getMyWalletDetail();
+	//获取益钱包详情
+    getWalletDetail();
+	
+	//如果投资过
+    if (wallet_apply_amount != undefined && wallet_apply_amount != null && wallet_apply_amount != "") {
+		setTimeout(function() {
+			//添加动画
+			$('.wallet_total div').addClass('wallet_at');
+	
+			$('#apply_amount_div').text("+" + wallet_apply_amount);
+	
+			setTimeout(function() {
+	
+				$('.wallet_total div').hide();
+	
+			}, 900);
+		}, 1500);
+	}
+         
+    $("a").click(function() {
+	   //跳转到相关页面  url  是否需要登录
+       if (refresh()) {
+       	 	var $this=$(this);
+			if ($this.text() == "赎回") {
+				$.getJSON('/getmywalletmaxredeem', getRequestData(), function(data) {
+					if (0 == data.error_code) {
+						var amount=new Number(data.amount);
+						if(amount>0){
+							window.location.href = $this.data("hidden").replace("file:///android_asset/", "");
+						}else{
+							Sys.showToast("您的益钱包无可赎回金额");
+						}
+					}else{
+						requestError();
+					}
+				}).error(function() {
+					requestError();
+				});
+			} else {
+				window.location.href = $(this).data("hidden").replace("file:///android_asset/", "");
+			}
+       }else{
+       		window.location.href = "login.html?return_url=" + $(this).data("hidden").replace("file:///android_asset/", "");
+       }
+   	});
+
+
+
+});
+
+//获取我的资金
+function getMyWalletDetail(){
+
+	$.getJSON('/getmywalletdetail',$.extend({},getRequestData()),function(data){
+		if(0==data.error_code){
+		    var obj = jQuery.parseJSON(data.detail);
+		
+		  	var demo1 = new countUp("memberWalletBx", 0, obj.SUM_BX, 2, 1, options);
+		    demo1.start();
+		
+		    var demo2 = new countUp("walletYesterdaySy", 0, obj.YESTERDAY_SY, 2, 1, options);
+		    demo2.start();
+		
+		    var demo3 = new countUp("walletSumSy", 0, obj.SUM_SY, 2, 1, options);
+		    demo3.start();
+	   }else{
+	   		requestError();
+	   }
+	}).error(function(){
+		requestError();
+	});
+}
+
+	function getWalletDetail(){
+		$.getJSON('/getwalletdetail', getRequestData() ,function(data) {
+			if (0 == data.error_code) {
+				var obj = jQuery.parseJSON(data.detail);
+				$('#min_num').text(obj.MIN_NUM);
+			}
+		}).error(function(){
+			requestError();
+		});
+	}
+
+	//获取URL参数
+	function queryString(item) {
+	    var url = location.href;
+		var sValue = url.match(new RegExp("[\?\&]" + item + "=([^\&]*)(\&?)", "i"))
+		return sValue ? sValue[1] : sValue
+	}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>我的益钱包</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="js/fastclick.js"></script>
+    <script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+  </script>
+</head>
+<body class="bg-gray">
+
+<div class="container" style="margin-bottom:55px;">
+
+    <!--益钱包头部数据开始-->
+    <div class="row">
+        <div class="wallet_total wallet_totalon">
+            <p  id="memberWalletBx" ></p>
+            <!-- 数字漂移div-->
+            <div  id="apply_amount_div"></div>
+            <span>我的益钱包资金（元）</span>
+        </div>
+
+        <div class="num_bgwhite">
+            <p><em id="walletYesterdaySy"></em></p>
+            <p>昨日收益（元）</p>
+        </div>
+
+        <div class="num_bgwhite">
+            <p><em id="walletSumSy"></em></p>
+            <p class="">累计收益（元）</p>
+        </div>
+    </div>
+    <!--益钱包头部数据结束-->
+    <!--益钱包文字介绍开始-->
+    <div class="row">
+
+        <div class="wallet_js">
+
+            <div class="wallet_js_c">
+                <h4><em>1</em>高收益（年化收益率表）</h4>
+                <img class="imgauto" src="img/about_wallet01.jpg">
+                <p>今日存入，次日起息；每日收益会自动转为本金，自动复投，实现日日生息，循环增值，年化收益率最高可达11%，秒杀同类产品；金额小于25元不起息。</p>
+            </div>
+
+            <div class="wallet_js_c">
+                <h4><em>2</em>低门槛：<label id="min_num">100</label>元起投</h4>
+            </div>
+
+            <div class="wallet_js_c">
+                <h4><em>3</em>随时支取</h4>
+                <p>转入资金满7日后即可随时转出，转出金额不限。</p>
+            </div>
+
+            <div class="wallet_js_c wallet_js_cno">
+                <h4><em>4</em>安全保障</h4>
+                <div class="wallet_js_cl"><img src="img/about_wallet03.jpg">由<em>阳光保险</em>承保</div>
+                <p><span class="fontbold">益钱包</span>采用类基金管理模式，将资金投入稳定型供应链项目，依托连连银通支付保障，民生银行代付系统，资金交易过程盗转盗用风险由阳光保险提供保障</p>
+            </div>
+
+        </div>
+
+    </div>
+    <!--益钱包文字介绍结束-->
+
+</div>
+
+<!--按钮开始-->
+<div class="foot">
+    <div class="btn_go" >
+        <a class="btn btn-primary btn-charge" data-hidden="file:///android_asset/apply.html" data-login="true">转入</a>
+        <a class="btn btn-primary btn-charge btn-charge-h" data-hidden="file:///android_asset/redeem.html" data-login="true">赎回</a>
+    </div>
+</div>
+
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="countUp/countUp.js" charset="utf-8"></script>
+<script src="js/my_wallet.js"  charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>登录</title>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="static/js/fastclick.js"></script>
+<script type="application/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+</script>
+</head>
+
+<body>
+<div class="container container_box">
+
+    <form id="frmLogin" action="">
+        <div class="form-group">
+            <label for="username">手机号</label>
+            <input type="number" name="username" id="username" class="form-control" placeholder="请输入手机号" maxlength="11" />
+        </div>
+        <div class="form-group">
+            <label for="pwd">密码
+             <i class="yellow"> <a href="javascript:void(0)" class="fpwd" id="gotoChangePassword">忘记密码?</a></i>
+            </label>
+            <input type="password" name="pwd" id="pwd" class="form-control" placeholder="请输入密码" maxlength="20" />
+            <input type="button" class="hide_eye" value="" id="toggle_eye">
+        </div>
+
+        <input type="button" class="btn btn-primary btn-block form-control" value="登录" id="loginButton"  style="color:#d0e6ff; background-color:#99ccff;"   disabled/>
+       
+        <input type="button" class="btn btn-block btn-white" value="免费注册" id="gotoRegister" style="margin-top: 15px"/>
+    </form>
+
+
+</div>
+
+
+
+
+<script src="static/js/jquery-2.0.3.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="js/login.js" charset="utf-8"></script>
+
+</body>
+
+<div class="login_b">
+    <span id="app_security" data-hidden="file:///android_asset/app_security.html" data-login="false">阳光保险保障<br><i class="gray9 font_size12">交易过程中的资金盗转盗用等保险事故</i></span>
+</div>
+
+</html>
